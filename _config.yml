@@ -2,7 +2,7 @@ title:            dbones
 description:      its a geek thing
 # Your site's domain goes here. Leave localhost server or blank when working locally.
 url:              http://dbones.github.io
-disqus_shortname:
+disqus_shortname: dbonesgithubio
 
 # Owner/author information
 owner:
