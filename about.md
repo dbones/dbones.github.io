@@ -2,14 +2,16 @@
 layout: page
 permalink: /about/
 title: About the Theme
-tagline: Minimal Mistakes, a Jekyll Theme
-tags: [about, Jekyll, theme, responsive]
-modified: 9-9-2013
+tagline: its a geek thing
+tags: 
+  - about
+modified: "21-07-2014"
 comments: true
-image:
-  feature: texture-feature-02.jpg
-  credit: Texture Lovers
-  creditlink: http://texturelovers.com
+image: 
+  feature: null
+  credit: null
+  creditlink: null
+published: true
 ---
 
 Jekyll is pretty rad and figured releasing a cleaned up version of [my site](http://mademistakes.com)[^1] as a theme for others to hack and build on would be fun. So here be that theme --- I call it **Minimal Mistakes**, a responsive Jekyll theme with large featured images and solid typography. 
