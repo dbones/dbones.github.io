@@ -6,7 +6,7 @@ tagline: its a geek thing
 tags: 
   - about
 modified: "21-07-2014"
-comments: true
+comments: false
 image: 
   feature: null
   credit: null
