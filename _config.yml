@@ -11,9 +11,9 @@ pygments: true
 title : Jekyll Bootstrap
 tagline: Site Tagline
 author :
-  name : Name Lastname
-  email : blah@email.test
-  github : username
+  name : Dave Rundle
+  email : dave-at-dbones-dot-co-dot-uk
+  github : dbones
   twitter : username
   feedburner : feedname
 
@@ -82,7 +82,7 @@ JB :
   comments :
     provider : disqus
     disqus :
-      short_name : jekyllbootstrap
+      short_name : dbonesgithubio
     livefyre :
       site_id : 123
     intensedebate :
