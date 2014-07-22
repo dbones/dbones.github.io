@@ -1,9 +1,9 @@
 ---
-layout: post
 published: true
-description: "Using Embedded views, the Razor ViewEngine, with Nancy self host."
+layout: post
+description: Embedded Razor views.....
 tags: [nancy]
-comments:true
+comments: true
 ---
 [Back Post - made available on 2014-07-22]
 
