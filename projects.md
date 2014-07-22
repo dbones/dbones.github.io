@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Projects
-permlink: /projects/
+permalink: /projects/
 description: List of projects I am working on in my free time.
 date: 2014-07-22
 tags: [projects, open-source]
