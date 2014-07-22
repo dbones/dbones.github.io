@@ -1,12 +1,10 @@
 ---
-layout: post
 published: true
-title: "meet the model, Nancy."
-description: "Pass a model to the view."
+layout: post
+description: Passing a model to the view
 tags: [nancy]
-comments:true
+comments: true
 ---
-
 [Back Post - made available on 2014-07-22]
 
 Lets recap, I have looked into
