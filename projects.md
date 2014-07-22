@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: Projects
 permlink: /projects/
 description: List of projects I am working on in my free time.
