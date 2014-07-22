@@ -3,14 +3,13 @@ layout: page
 permalink: /about/
 title: About
 tagline: its a geek thing
-tags: 
-  - about
+tags: [about]
 modified: "21-07-2014"
 comments: false
 image: 
-  feature: null
-  credit: null
-  creditlink: null
+  feature: 
+  credit: 
+  creditlink: 
 published: true
 ---
 
