@@ -29,7 +29,7 @@ public class HelloModule : NancyModule
     {
         Get["/"] = parameters =>
         {
-            return View["index"]; //<- new code
+            return View["index"]; 
         };
     }
 }
