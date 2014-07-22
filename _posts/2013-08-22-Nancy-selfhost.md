@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Nancy selfhost
-description: Topshelf and Nancy selfhosting, a helloworld
+title: "Nancy selfhost"
+description: "Topshelf and Nancy selfhosting, a helloworld"
 date: 2013-08-22 17:13:28 +01:00
 tags: "helloworld topshelf nancy"
 comments: true
