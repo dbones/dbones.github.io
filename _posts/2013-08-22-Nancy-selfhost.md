@@ -2,8 +2,7 @@
 layout: post
 title: "Nancy selfhost"
 description: "Topshelf and Nancy selfhosting, a helloworld"
-date: 2013-08-22 17:13:28 +01:00
-tags: "helloworld topshelf nancy"
+tags: [helloworld, topshelf, nancy]
 comments: true
 image:
   feature: 
@@ -84,9 +83,4 @@ Run the application, **F5** should open a console application, open up you brows
 >Hello World
 
 
-Thats it, we have created a fully working hello world
-
-
-
-
-
+Thats it, we have created a fully working hello world.
