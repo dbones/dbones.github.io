@@ -1,13 +1,9 @@
 ---
+published: true
 layout: post
-title: "Nancy selfhost"
-description: "Topshelf and Nancy selfhosting, a helloworld"
+description: Topshelf and Nancy selfhosting, a helloworld
 tags: [helloworld, topshelf, nancy]
 comments: true
-image:
-  feature: 
-  credit: 
-  creditlink: 
 ---
 In this post I will set-up Nancy as a windows service with the help of TopShelf.
 
