@@ -1,9 +1,9 @@
 ---
 layout: post
+published: true
 description: "A key part of the view is the model it uses, in this post I have a look into how to pass a simple model to a Razor view, on the Nancy platform."
 tags: [nancy]
 comments:true
-published: true
 ---
 [Back Post - made available on 2014-07-22]
 
