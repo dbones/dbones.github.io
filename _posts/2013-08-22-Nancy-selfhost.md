@@ -17,8 +17,8 @@ Nancy as is a small http framework which allows .NET developers to deliver conte
 # Create project
 Create a console application (I called mine TestNancy), and then add the following nuget packages:
 
-* TopShelf *(3.1.1)*
-* Nancy.Hosting.Self *(0.18.0)*
+* TopShelf  (3.1.1)*
+* Nancy.Hosting.Self  (0.18.0)*
 
 # Set-up TopShelf 
 TopShelf is my favoured way to handle windows services. The following code will create and set-up a windows service
@@ -78,7 +78,7 @@ Nancy uses modules to set-up the server, in this example we are going to copy th
     }
 
 #Run
-Run the application, **F5** should open a console application, open up you browser and navigate to **http://localhost:1234**, it should just display:
+Run the application, *F5* should open a console application, open up you browser and navigate to *http://localhost:1234*, it should just display:
 
 >Hello World
 
