@@ -1,7 +1,7 @@
 ---
-layout: post
-description: We look into enabling Diagnostics and extending them to include time taken
 published: true
+layout: post
+description: how can we see what is happening under the hood
 tags: [nancy]
 comments: true
 ---
