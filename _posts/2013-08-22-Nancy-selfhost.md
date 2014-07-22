@@ -1,10 +1,14 @@
 ---
 layout: post
 title: Nancy selfhost
-permalink: new-page.html
 description: Topshelf and Nancy selfhosting, a helloworld
 date: 2013-08-22 17:13:28 +01:00
 tags: "helloworld topshelf nancy"
+comments: true
+image:
+  feature: 
+  credit: 
+  creditlink: 
 ---
 In this post I will set-up Nancy as a windows service with the help of TopShelf.
 
