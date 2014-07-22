@@ -1,6 +1,6 @@
 ---
 layout: post
-description: Using Embedded views, the Razor ViewEngine, with Nancy self host.
+description: "Using Embedded views, the Razor ViewEngine, with Nancy self host."
 tags: [nancy]
 comments:true
 published: true

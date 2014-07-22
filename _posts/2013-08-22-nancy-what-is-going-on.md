@@ -2,7 +2,6 @@
 layout: post
 description: We look into enabling Diagnostics and extending them to include time taken
 published: true
-layout: post
 tags: [nancy]
 comments: true
 ---
