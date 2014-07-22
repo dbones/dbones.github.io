@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-description: Topshelf and Nancy selfhosting, a helloworld
+description: Topshelf and Nancy selfhosting... a helloworld app
 tags: [helloworld, topshelf, nancy]
 comments: true
 ---
