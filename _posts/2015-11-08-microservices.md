@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: Microservices - notes
 description: Microservices - Part 1 - the boundary
