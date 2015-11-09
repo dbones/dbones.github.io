@@ -48,8 +48,8 @@ As mentioned you can achive both sytles with both HTTP and AMQP.
 ###HTTP
 
 <figure>
-	<a href="./../images/posts/2015/microservices/service-http.JPG"><img src="./../images/posts/2015/microservices/service-http.JPG"></img></a>
-	<figcaption><a href="./../images/posts/2015/microservices/service-http.JPG" title="Microserive">Access services via HTTP</a>.</figcaption>
+	<a href="http://dbones.github.io/images/posts/2015/microservices/service-http.JPG"><img src="http://dbones.github.io/images/posts/2015/microservices/service-http.JPG"></img></a>
+	<figcaption><a href="http://dbones.github.io/images/posts/2015/microservices/service-http.JPG" title="Microserive">Access services via HTTP</a>.</figcaption>
 </figure>
 
 With the HTTP, you can support both R/R and P/S. the key with this interface is to embrace the HTTP Verbs so choose a framework which supports these easliy (Express/NancyFx/Sinatra).
@@ -62,14 +62,14 @@ The challange with this style has been service discovery and loadbalancing (I wi
 ###AMQP
 
 <figure>
-	<a href="./../images/posts/2015/microservices/service-amqp.JPG"><img src="./../images/posts/2015/microservices/service-amqp.JPG"></img></a>
-	<figcaption><a href="./../images/posts/2015/microservices/service-amqp.JPG" title="Microserive">Access services Via AMQP</a>.</figcaption>
+	<a href="http://dbones.github.io/images/posts/2015/microservices/service-amqp.JPG"><img src="http://dbones.github.io/images/posts/2015/microservices/service-amqp.JPG"></img></a>
+	<figcaption><a href="http://dbones.github.io/images/posts/2015/microservices/service-amqp.JPG" title="Microserive">Access services Via AMQP</a>.</figcaption>
 </figure>
 
 Using an AMQP broker we can achive both R/R and P/S, with servers/components such as RabbitMq make support both styles easier.
 
 - R/R, this is achived by the client providing a return queue (each client instance will have their own return queue) and sending a requst/message with a corralation ID and location of the return queue. The service will send the response back to the return queue with the correct corralation ID. This seems a little complex but there are frameworks which do this all for you, such as EasyNetQ. 
--P/S, this is out of the box for all the frameworks which support AMQP.
+- P/S, this is out of the box for all the frameworks which support AMQP.
 
 This solution provides a couple of interesting side effects.
 
@@ -81,8 +81,8 @@ This solution provides a couple of interesting side effects.
 ##Resources
 
 <figure>
-	<a href="./../images/posts/2015/microservices/service-boundary-donot access-others.JPG"><img src="./../images/posts/2015/microservices/service-boundary-donot access-others.JPG"></img></a>
-	<figcaption><a href="./../images/posts/2015/microservices/service-boundary-donot access-others.JPG" title="Encapsulte resources">Microservice</a>.</figcaption>
+	<a href="http://dbones.github.io/images/posts/2015/microservices/service-boundary-donot access-others.JPG"><img src="http://dbones.github.io/images/posts/2015/microservices/service-boundary-donot access-others.JPG"></img></a>
+	<figcaption><a href="http://dbones.github.io/images/posts/2015/microservices/service-boundary-donot access-others.JPG" title="Encapsulte resources">Microservice</a>.</figcaption>
 </figure>
 
 As part of following good engineering parctices we aim to **Encapsulate** our internals from others. This is true for microservices as well. This means that other services cannot access the database or internal resouces of the current service. Services will only access one another via their API's. 
