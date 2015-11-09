@@ -1,14 +1,12 @@
 ---
 published: true
 layout: post
-title: Microservices - notes
+title: Microservices - part 1 - the boundary
 description: Microservices - Part 1 - the boundary
 date: 2015-11-08
 tags: [microservice, architecture]
 comments: false
 ---
-
-#Microservices - the boundary
 
 This post series are a few notes on Microservices, based on observations and experience.
 
