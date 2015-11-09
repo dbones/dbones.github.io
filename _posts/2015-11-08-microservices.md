@@ -20,7 +20,7 @@ general guidance is that each Microservice follows
 - Consider an EDA architecture, with eventual consistancy.
 - Make services stateless.
 
-# Microserice
+# Microservice
 
 <figure>
 	<a href="http://dbones.github.io/images/posts/2015/microservices/service-boundary.JPG"><img src="http://dbones.github.io/images/posts/2015/microservices/service-boundary.JPG"></img></a>
@@ -78,7 +78,7 @@ This solution provides a couple of interesting side effects.
 - load balancing (when you set the prefetch, a round robin is then initiated)
 - a bit of a challange with regards to R/R. consider if more than one service responds.
 
-##Resources
+##Resources (internal dependencies)
 
 <figure>
 	<a href="http://dbones.github.io/images/posts/2015/microservices/service-boundary-donot access-others.JPG"><img src="http://dbones.github.io/images/posts/2015/microservices/service-boundary-donot access-others.JPG"></img></a>
