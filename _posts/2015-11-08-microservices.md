@@ -25,8 +25,8 @@ general guidance is that each Microservice follows
 # Microserice
 
 <figure>
-	<a href="../images/posts/2015/microserices/service-boundary.JPG"><img src="../images/posts/2015/microserices/service-boundary.JPG"></img></a>
-	<figcaption><a href="../images/posts/2015/microserices/service-boundary.JPG" title="Microserive">Microservice</a>.</figcaption>
+	<a href="../images/posts/2015/microservices/service-boundary.JPG"><img src="../images/posts/2015/microservices/service-boundary.JPG"></img></a>
+	<figcaption><a href="../images/posts/2015/microservices/service-boundary.JPG" title="Microserive">Microservice</a>.</figcaption>
 </figure>
 
 
@@ -51,8 +51,8 @@ you can achive both sytles with both HTTP and AMQP.
 ###HTTP
 
 <figure>
-	<a href="./../images/posts/2015/microserices/service-http.JPG"><img src="./../images/posts/2015/microserices/service-http.JPG"></img></a>
-	<figcaption><a href="./../images/posts/2015/microserices/service-http.JPG" title="Microserive">Access services via HTTP</a>.</figcaption>
+	<a href="./../images/posts/2015/microservices/service-http.JPG"><img src="./../images/posts/2015/microservices/service-http.JPG"></img></a>
+	<figcaption><a href="./../images/posts/2015/microservices/service-http.JPG" title="Microserive">Access services via HTTP</a>.</figcaption>
 </figure>
 
 With the HTTP, you can supply both R/R and P/S. the key with this interface is to imbrace the HTTP Verbs so chose a framework which supports these easliy (Express/NancyFx/Sinatra).
@@ -66,8 +66,8 @@ The challange with this style has been service discovery and loadbalancing (I wi
 ###AMQP
 
 <figure>
-	<a href="./../images/posts/2015/microserices/service-amqp.JPG"><img src="./../images/posts/2015/microserices/service-amqp.JPG"></img></a>
-	<figcaption><a href="./../images/posts/2015/microserices/service-amqp.JPG" title="Microserive">Access services Via AMQP</a>.</figcaption>
+	<a href="./../images/posts/2015/microservices/service-amqp.JPG"><img src="./../images/posts/2015/microservices/service-amqp.JPG"></img></a>
+	<figcaption><a href="./../images/posts/2015/microservices/service-amqp.JPG" title="Microserive">Access services Via AMQP</a>.</figcaption>
 </figure>
 
 Using an AMQP broker we can achive both R/R and P/S, with components such as RabbitMq this is provided out of the Box.
@@ -85,8 +85,8 @@ This provide a couple of interesting side effects.
 ##Resources
 
 <figure>
-	<a href="./../images/posts/2015/microserices/service-boundary-donot access-others.JPG"><img src="./../images/posts/2015/microserices/service-boundary-donot access-others.JPG"></img></a>
-	<figcaption><a href="./../images/posts/2015/microserices/service-boundary-donot access-others.JPG" title="Encapsulte resources">Microservice</a>.</figcaption>
+	<a href="./../images/posts/2015/microservices/service-boundary-donot access-others.JPG"><img src="./../images/posts/2015/microservices/service-boundary-donot access-others.JPG"></img></a>
+	<figcaption><a href="./../images/posts/2015/microservices/service-boundary-donot access-others.JPG" title="Encapsulte resources">Microservice</a>.</figcaption>
 </figure>
 
 As part of following good engineering parctices we aim to Encapsulate our internals from others. This is true for Microservices as well. This means that other services cannot access the database or internal resouces of the current service.
