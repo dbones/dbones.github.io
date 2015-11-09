@@ -17,6 +17,7 @@ general guidance is that each Microservice follows
 - Single Responcibility Pincipal.
 - Look for domain boundaries to identify a Microservice.
 - Any resource is encapsulated, ie no other service can access my database.
+- API can use more than one protocol and there are 2 sytles of interactions pub/sub & req/res.
 - Consider an EDA architecture, with eventual consistancy.
 - Make services stateless.
 
@@ -32,7 +33,7 @@ Considering the definition for a Service Oriented Architecure **(SOA)**, a Micro
 
 Each Microservice can have
 
-- its own API (which could be HTTP, AMQP etc).
+- its own API (including the protocol ie HTTP and the style Request/Response or Publish/Subscribe).
 - its own resources (databases, files etc), which cannot be accessed by anyone else.
 
 
@@ -89,6 +90,11 @@ As part of following good engineering parctices we aim to **Encapsulate** our in
 
 **Note** that a service can cache or store their own version of the truth about the data.
 
+##Eventual Consistancy and Events
+
+As with SOA, eventual consistancy suites this architecture too. To achieve this consider using an Event Driven Architecure with Queues (such as RabbitMq) to handle guaranteed delivery for you.
+
+for more info: http://udidahan.com/2011/09/18/inconsistent-data-poor-performance-or-soa-pick-one/
 
 ##Scaling
 
