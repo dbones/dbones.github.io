@@ -25,8 +25,8 @@ general guidance is that each Microservice follows
 # Microserice
 
 <figure>
-	<a href="./../images/posts/2015/microserices/service-boundary.JPG"><img src="./../images/posts/2015/microserices/service-boundary.JPG"></img></a>
-	<figcaption><a href="./../images/posts/2015/microserices/service-boundary.JPG" title="Microserive">Microservice</a>.</figcaption>
+	<a href="../images/posts/2015/microserices/service-boundary.JPG"><img src="../images/posts/2015/microserices/service-boundary.JPG"></img></a>
+	<figcaption><a href="../images/posts/2015/microserices/service-boundary.JPG" title="Microserive">Microservice</a>.</figcaption>
 </figure>
 
 
