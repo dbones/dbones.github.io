@@ -42,7 +42,7 @@ Each Microservice can have
 there are a number of ways to expose an API with services. The 2 main protocols I have seen beening used are HTTP and AMQP. More importantly we need to consider the style of of interaction we have, as both protocols can be used:
 
 - Request Response **(R/R)**, mainly sync - a client will send a request and the service will provide a response.
-- Publish Subscribe **(P/S)**, async, normally indirect - a client will publish information, called an Event, and the service will subscribe and act accordingly.
+- Publish Subscribe **(P/S)**, async, normally indirect - a publisher will publish information, called an Event, and a consumer will subscribe and act accordingly.
 
 As mentioned you can achive both sytles with both HTTP and AMQP.
 
@@ -98,6 +98,6 @@ for more info: http://udidahan.com/2011/09/18/inconsistent-data-poor-performance
 
 ##Scaling
 
-The best way to scale a service is to make it stateless, allowing to add addtional instance of a service where any of the instances can handle a request.
+The best way to scale a service is to make it stateless, allowing to add addtional instances of the service, where any of the instances can handle a request.
 
 Also ensure you follow any clustering reconmendations for any stateful components/dependencies, ie databases, queues, will support clustering for High avalibilty and scale.
