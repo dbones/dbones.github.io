@@ -97,9 +97,7 @@ what we are doing here is creating a new image, which uses the "mono" as the bas
 5. cd into the **releasesImage** folder
 6. build the image (**replace dbones** with **your docker hub account**)
 
-{% highlight plain %}
-docker build -t "dbones/testnet" .
-{% endhighlight %}
+**docker build -t "dbones/testnet" .**
 
 7. you can confirm this by running **docker images** command and the new image will be listed. you may also run a container directly off the image.
 
@@ -114,9 +112,7 @@ once you have built the image, you can run it directly, or publish it, and then 
 
 1. while in your docker command, and that you have logged into your docker registry (**docker login* command), now run the push
 
-{% highlight plain %}
-docker push dbones/testnet
-{% endhighlight %}
+**docker push dbones/testnet**
 
 done. you can goto docker hub and see the image.
 
@@ -130,9 +126,7 @@ if you want to run docker directly, no compose or orchestrator, that is not a pr
 
 1. on the linux server with docker installed call the following command.
 
-{% highlight plain %}
-docker run -p 8080:80 -d dbones/testnet
-{% endhighlight %}
+**docker run -p 8080:80 -d dbones/testnet**
 
 this exposes port 80 of the container on port 8080 on the host pc, 
 to test this
