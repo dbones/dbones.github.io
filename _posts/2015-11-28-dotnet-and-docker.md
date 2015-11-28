@@ -29,7 +29,6 @@ Docker containers are designed to run a process and exit when they are complete.
 4. Compile your code (you can compile using Mono or MS .NET),
 
 {% highlight csharp %}
-    
 static void Main(string[] args)
 {
     Console.CancelKeyPress += (sender, eventArgs) =>
@@ -46,13 +45,11 @@ static void Main(string[] args)
         Thread.Sleep(Timeout.Infinite);
     }
 }
-    
 {% endhighlight %}
 
 The sample Nancy Module in this test app
 
 {% highlight csharp %}
-
 public class HelloModule : NancyModule
 {
     public HelloModule()
@@ -60,7 +57,6 @@ public class HelloModule : NancyModule
         Get["/"] = parameters => $"Hello from {Environment.OSVersion.Platform}";
     }
 }
-
 {% endhighlight %}
 
 **note:** the Thread.Sleep is intensional, as it will not cause the container to exit. do not use ReadKey or ReadLine.
@@ -88,13 +84,11 @@ this part i cheat a little and use VM setup via Vagrant using the *box-cutter/ub
 
 Dockerfile
 
-{% highlight docker %}
-
+{% highlight plain %}
 FROM mono
 COPY . /serv
 CMD [ "mono",  "/serv/TestMvc.Host.exe" ]
 EXPOSE 80
-
 {% endhighlight %}
 
 what we are doing here is creating a new image, which uses the "mono" as the base. We copy all the files from current folder on the HOST machine (**releaseImage**) into a folder called serv in the container image. it finishes off by letting docker know that a container using this image should run the TestMvc.Host.exe and expose port 80.
@@ -103,10 +97,8 @@ what we are doing here is creating a new image, which uses the "mono" as the bas
 5. cd into the **releasesImage** folder
 6. build the image (**replace dbones** with **your docker hub account**)
 
-{% highlight cmd %}
-
+{% highlight plain %}
 docker build -t "dbones/testnet" .
-
 {% endhighlight %}
 
 7. you can confirm this by running **docker images** command and the new image will be listed. you may also run a container directly off the image.
@@ -122,10 +114,8 @@ once you have built the image, you can run it directly, or publish it, and then 
 
 1. while in your docker command, and that you have logged into your docker registry (**docker login* command), now run the push
 
-{% highlight cmd %}
-
+{% highlight plain %}
 docker push dbones/testnet
-
 {% endhighlight %}
 
 done. you can goto docker hub and see the image.
@@ -140,10 +130,8 @@ if you want to run docker directly, no compose or orchestrator, that is not a pr
 
 1. on the linux server with docker installed call the following command.
 
-{% highlight cmd %}
-
+{% highlight plain %}
 docker run -p 8080:80 -d dbones/testnet
-
 {% endhighlight %}
 
 this exposes port 80 of the container on port 8080 on the host pc, 
@@ -175,10 +163,9 @@ in this setup we access the Nancy application through a loadbalancer
 1. create a stack called **test**
 2. copy the following into the docker-compose.yaml and docker-compose-yaml boxes.
 
-docker-compose.yaml
+**docker-compose.yaml**
 
 {% highlight yaml %}
-
 hello-world-lb:
 ports:
 - 80:80
@@ -196,13 +183,11 @@ labels:
 tty: true
 image: dbones/testnet
 stdin_open: true
-
 {% endhighlight %}
 
-rancher-compose.yaml
+**rancher-compose.yaml**
 
 {% highlight yaml %}
-
 hello-world-lb:
 scale: 1
 health_check:
@@ -220,7 +205,6 @@ health_check:
     request_line: GET / HTTP/1.0
     healthy_threshold: 2
     response_timeout: 2000
-
 {% endhighlight %}
 
 3. click on the play buttons.
