@@ -30,22 +30,22 @@ Docker containers are designed to run a process and exit when they are complete.
 
 {% highlight csharp %}
     
-    static void Main(string[] args)
+static void Main(string[] args)
+{
+    Console.CancelKeyPress += (sender, eventArgs) =>
     {
-        Console.CancelKeyPress += (sender, eventArgs) =>
-        {
-            Console.WriteLine("exiting...");
-        };
-    
-        Console.WriteLine("About to start server");
-        using (var host = new NancyHost(new Uri("http://localhost:80")))
-        {
-            host.Start();
-    
-            Console.WriteLine("started, press \"ctrl + c\" to exit");
-            Thread.Sleep(Timeout.Infinite);
-        }
+        Console.WriteLine("exiting...");
+    };
+
+    Console.WriteLine("About to start server");
+    using (var host = new NancyHost(new Uri("http://localhost:80")))
+    {
+        host.Start();
+
+        Console.WriteLine("started, press \"ctrl + c\" to exit");
+        Thread.Sleep(Timeout.Infinite);
     }
+}
     
 {% endhighlight %}
 
@@ -53,13 +53,13 @@ The sample Nancy Module in this test app
 
 {% highlight csharp %}
 
-    public class HelloModule : NancyModule
+public class HelloModule : NancyModule
+{
+    public HelloModule()
     {
-        public HelloModule()
-        {
-            Get["/"] = parameters => $"Hello from {Environment.OSVersion.Platform}";
-        }
+        Get["/"] = parameters => $"Hello from {Environment.OSVersion.Platform}";
     }
+}
 
 {% endhighlight %}
 
@@ -179,23 +179,23 @@ docker-compose.yaml
 
 {% highlight yaml %}
 
-    hello-world-lb:
-    ports:
-    - 80:80
-    labels:
-        io.rancher.scheduler.affinity:host_label: server=proxy
-    tty: true
-    image: rancher/load-balancer-service
-    links:
-    - hello-world:hello-world
-    stdin_open: true
-    hello-world:
-    labels:
-        io.rancher.scheduler.affinity:container_ne: hello-world
-        io.rancher.scheduler.affinity:host_label: server=application
-    tty: true
-    image: dbones/testnet
-    stdin_open: true
+hello-world-lb:
+ports:
+- 80:80
+labels:
+    io.rancher.scheduler.affinity:host_label: server=proxy
+tty: true
+image: rancher/load-balancer-service
+links:
+- hello-world:hello-world
+stdin_open: true
+hello-world:
+labels:
+    io.rancher.scheduler.affinity:container_ne: hello-world
+    io.rancher.scheduler.affinity:host_label: server=application
+tty: true
+image: dbones/testnet
+stdin_open: true
 
 {% endhighlight %}
 
@@ -203,23 +203,23 @@ rancher-compose.yaml
 
 {% highlight yaml %}
 
-    hello-world-lb:
-    scale: 1
-    health_check:
-        port: 42
-        interval: 2000
-        unhealthy_threshold: 3
-        healthy_threshold: 2
-        response_timeout: 2000
-    hello-world:
-    scale: 2
-    health_check:
-        port: 80
-        interval: 2000
-        unhealthy_threshold: 3
-        request_line: GET / HTTP/1.0
-        healthy_threshold: 2
-        response_timeout: 2000
+hello-world-lb:
+scale: 1
+health_check:
+    port: 42
+    interval: 2000
+    unhealthy_threshold: 3
+    healthy_threshold: 2
+    response_timeout: 2000
+hello-world:
+scale: 2
+health_check:
+    port: 80
+    interval: 2000
+    unhealthy_threshold: 3
+    request_line: GET / HTTP/1.0
+    healthy_threshold: 2
+    response_timeout: 2000
 
 {% endhighlight %}
 
