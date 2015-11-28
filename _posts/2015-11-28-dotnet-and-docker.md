@@ -146,7 +146,7 @@ if you want to run docker directly, no compose or orchestrator, that is not a pr
 
 cmd:
 
-{% highlight cmd %}
+{% highlight text %}
 
     docker run -p 8080:80 -d dbones/testnet
 
