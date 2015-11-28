@@ -88,12 +88,12 @@ this part i cheat a little and use VM setup via Vagrant using the *box-cutter/ub
 
 Dockerfile
 
-{% highlight csharp %}
+{% highlight docker %}
 
-    FROM mono
-    COPY . /serv
-    CMD [ "mono",  "/serv/TestMvc.Host.exe" ]
-    EXPOSE 80
+FROM mono
+COPY . /serv
+CMD [ "mono",  "/serv/TestMvc.Host.exe" ]
+EXPOSE 80
 
 {% endhighlight %}
 
