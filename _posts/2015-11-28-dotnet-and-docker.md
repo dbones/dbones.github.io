@@ -86,10 +86,12 @@ this part i cheat a little and use VM setup via Vagrant using the *box-cutter/ub
 
 3. Create a file called "Dockerfile" no extension, if you do this in VS code it will supply some level of syntax support.
 
+{% highlight %}
     FROM mono
     COPY . /serv
     CMD [ "mono",  "/serv/TestMvc.Host.exe" ]
     EXPOSE 80
+{% endhighlight %}
 
 what we are doing here is creating a new image, which uses the "mono" as the base. We copy all the files from current folder on the HOST machine (**releaseImage**) into a folder called serv in the container image. it finishes off by letting docker know that a container using this image should run the TestMvc.Host.exe and expose port 80.
 
@@ -97,7 +99,9 @@ what we are doing here is creating a new image, which uses the "mono" as the bas
 5. cd into the **releasesImage** folder
 6. build the image (**replace dbones** with **your docker hub account**)
 
+{% highlight %}
     docker build -t "dbones/testnet" .
+{% endhighlight %}
 
 7. you can confirm this by running **docker images** command and the new image will be listed. you may also run a container directly off the image.
 
@@ -112,7 +116,9 @@ once you have built the image, you can run it directly, or publish it, and then 
 
 1. while in your docker command, and that you have logged into your docker registry (**docker login* command), now run the push
 
+{% highlight %}
     docker push dbones/testnet
+{% endhighlight %}
 
 done. you can goto docker hub and see the image.
 
@@ -126,7 +132,9 @@ if you want to run docker directly, no compose or orchestrator, that is not a pr
 
 1. on the linux server with docker installed call the following command.
 
+{% highlight %}
     docker run -p 8080:80 -d dbones/testnet
+{% endhighlight %}
 
 this exposes port 80 of the container on port 8080 on the host pc, 
 to test this
@@ -159,6 +167,7 @@ in this setup we access the Nancy application through a loadbalancer
 
 docker-compose.yaml
 
+{% highlight %}
     hello-world-lb:
     ports:
     - 80:80
@@ -176,10 +185,11 @@ docker-compose.yaml
     tty: true
     image: dbones/testnet
     stdin_open: true
-     
+{% endhighlight %}     
 
 rancher-compose.yaml
 
+{% highlight %}
     hello-world-lb:
     scale: 1
     health_check:
@@ -197,7 +207,7 @@ rancher-compose.yaml
         request_line: GET / HTTP/1.0
         healthy_threshold: 2
         response_timeout: 2000
-
+{% endhighlight %}
 
 3. click on the play buttons.
 
