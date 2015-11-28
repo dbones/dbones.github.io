@@ -86,6 +86,7 @@ this part i cheat a little and use VM setup via Vagrant using the *box-cutter/ub
 
 3. Create a file called "Dockerfile" no extension, if you do this in VS code it will supply some level of syntax support.
 
+
 {% raw %}
 
     FROM mono
@@ -100,6 +101,7 @@ what we are doing here is creating a new image, which uses the "mono" as the bas
 4. open docker command (I do this by accessing vagrant ssh), remember to run **docker login**, 
 5. cd into the **releasesImage** folder
 6. build the image (**replace dbones** with **your docker hub account**)
+
 
 {% raw %}
 
@@ -120,6 +122,7 @@ once you have built the image, you can run it directly, or publish it, and then 
 
 1. while in your docker command, and that you have logged into your docker registry (**docker login* command), now run the push
 
+
 {% raw %}
 
     docker push dbones/testnet
@@ -137,6 +140,7 @@ ok there are a couple of ways, it depends on your setup, i would recondmend look
 if you want to run docker directly, no compose or orchestrator, that is not a problem, just follow these instructions.
 
 1. on the linux server with docker installed call the following command.
+
 
 {% raw %}
 
@@ -228,7 +232,7 @@ rancher-compose.yaml
 	<figcaption><a href="http://dbones.github.io/images/posts/2015/net-docker/onRancher.JPG" title="running containers using rancher to manage them/">running containers using rancher to manage them/</a>.</figcaption>
 </figure>
 
-you will now see that we have 3 containers deployed and that we can access the sit through the proxy server.
+you will now see that we have 3 containers deployed and running and that we can access the site through the proxy server.
 
 <figure>
 	<a href="http://dbones.github.io/images/posts/2015/net-docker/rancherServers.JPG"><img src="http://dbones.github.io/images/posts/2015/net-docker/rancherServers.JPG"></img></a>
