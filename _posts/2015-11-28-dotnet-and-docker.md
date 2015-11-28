@@ -234,3 +234,5 @@ you will now see that we have 3 containers deployed and that we can access the s
 	<a href="http://dbones.github.io/images/posts/2015/net-docker/rancherServers.JPG"><img src="http://dbones.github.io/images/posts/2015/net-docker/rancherServers.JPG"></img></a>
 	<figcaption><a href="http://dbones.github.io/images/posts/2015/net-docker/rancherServers.JPG" title="we can see the containers on the correct servers">we can see the containers on the correct servers</a>.</figcaption>
 </figure>
+
+.
