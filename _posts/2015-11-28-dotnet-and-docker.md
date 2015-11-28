@@ -86,6 +86,7 @@ this part i cheat a little and use VM setup via Vagrant using the *box-cutter/ub
 
 3. Create a file called "Dockerfile" no extension, if you do this in VS code it will supply some level of syntax support.
 
+Dockerfile
 
 {% raw %}
 
@@ -102,6 +103,7 @@ what we are doing here is creating a new image, which uses the "mono" as the bas
 5. cd into the **releasesImage** folder
 6. build the image (**replace dbones** with **your docker hub account**)
 
+cmd
 
 {% raw %}
 
@@ -122,6 +124,7 @@ once you have built the image, you can run it directly, or publish it, and then 
 
 1. while in your docker command, and that you have logged into your docker registry (**docker login* command), now run the push
 
+cmd
 
 {% raw %}
 
@@ -141,6 +144,7 @@ if you want to run docker directly, no compose or orchestrator, that is not a pr
 
 1. on the linux server with docker installed call the following command.
 
+cmd
 
 {% raw %}
 
