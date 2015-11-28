@@ -144,6 +144,8 @@ if you want to run docker directly, no compose or orchestrator, that is not a pr
 
 1. on the linux server with docker installed call the following command.
 
+cmd:
+
 {% highlight cmd %}
 
     docker run -p 8080:80 -d dbones/testnet
