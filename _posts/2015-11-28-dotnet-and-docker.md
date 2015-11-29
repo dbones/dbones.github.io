@@ -67,3 +67,26 @@ public class HelloModule : NancyModule
 	<a href="http://dbones.github.io/images/posts/2015/net-docker/onWindows.JPG"><img src="http://dbones.github.io/images/posts/2015/net-docker/onWindows.JPG"></img></a>
 	<figcaption><a href="http://dbones.github.io/images/posts/2015/net-docker/onWindows.JPG" title="on windows">on windows</a>.</figcaption>
 </figure>
+
+##Step 2 - Compiling a docker image
+
+For this part I cheat a little and use VM setup via Vagrant using the *box-cutter/ubuntu1404-docker* image. 
+
+1. Create a new folder, i will call this **releaseImage**, this will be used to used to 
+2. Copy the compiled filed into the new **releaseImage**, all the dll's and exe.
+
+<figure>
+	<a href="http://dbones.github.io/images/posts/2015/net-docker/vmFolder.JPG"><img src="http://dbones.github.io/images/posts/2015/net-docker/vmFolder.JPG"></img></a>
+	<figcaption><a href="http://dbones.github.io/images/posts/2015/net-docker/vmFolder.JPG" title="contents of the releaseImage folder">contents of the releaseImage folder</a>.</figcaption>
+</figure>
+
+3. Create a file called "Dockerfile" no extension, if you do this in VS code it will supply some level of syntax support.
+
+Dockerfile
+
+{% highlight plain %}
+FROM mono
+COPY . /serv
+CMD [ "mono",  "/serv/TestMvc.Host.exe" ]
+EXPOSE 80
+{% endhighlight %}
