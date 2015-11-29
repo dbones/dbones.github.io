@@ -167,44 +167,44 @@ in this setup we access the Nancy application through a loadbalancer
 
 {% highlight yaml %}
 hello-world-lb:
-ports:
-- 80:80
-labels:
-    io.rancher.scheduler.affinity:host_label: server=proxy
-tty: true
-image: rancher/load-balancer-service
-links:
-- hello-world:hello-world
-stdin_open: true
+    ports:
+    - 80:80
+    labels:
+        io.rancher.scheduler.affinity:host_label: server=proxy
+    tty: true
+    image: rancher/load-balancer-service
+    links:
+    - hello-world:hello-world
+    stdin_open: true
 hello-world:
-labels:
-    io.rancher.scheduler.affinity:container_ne: hello-world
-    io.rancher.scheduler.affinity:host_label: server=application
-tty: true
-image: dbones/testnet
-stdin_open: true
+    labels:
+        io.rancher.scheduler.affinity:container_ne: hello-world
+        io.rancher.scheduler.affinity:host_label: server=application
+    tty: true
+    image: dbones/testnet
+    stdin_open: true
 {% endhighlight %}
 
 **rancher-compose.yaml**
 
 {% highlight yaml %}
 hello-world-lb:
-scale: 1
-health_check:
-    port: 42
-    interval: 2000
-    unhealthy_threshold: 3
-    healthy_threshold: 2
-    response_timeout: 2000
+    scale: 1
+    health_check:
+        port: 42
+        interval: 2000
+        unhealthy_threshold: 3
+        healthy_threshold: 2
+        response_timeout: 2000
 hello-world:
-scale: 2
-health_check:
-    port: 80
-    interval: 2000
-    unhealthy_threshold: 3
-    request_line: GET / HTTP/1.0
-    healthy_threshold: 2
-    response_timeout: 2000
+    scale: 2
+    health_check:
+        port: 80
+        interval: 2000
+        unhealthy_threshold: 3
+        request_line: GET / HTTP/1.0
+        healthy_threshold: 2
+        response_timeout: 2000
 {% endhighlight %}
 
 3. click on the play buttons.
