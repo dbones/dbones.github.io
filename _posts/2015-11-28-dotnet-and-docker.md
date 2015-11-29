@@ -90,3 +90,20 @@ COPY . /serv
 CMD [ "mono",  "/serv/TestMvc.Host.exe" ]
 EXPOSE 80
 {% endhighlight %}
+
+what we are doing here is creating a new image, which uses the "mono" as the base. We copy all the files from current folder on the HOST machine (**releaseImage**) into a folder called serv in the container image. it finishes off by letting docker know that a container using this image should run the TestMvc.Host.exe and expose port 80.
+
+4. open docker command (I do this by accessing vagrant ssh), remember to run **docker login**, 
+5. cd into the **releasesImage** folder
+6. build the image (**replace dbones** with **your docker hub account**)
+
+{% highlight text %}
+docker build -t "dbones/testnet" .
+{% endhighlight %}
+
+7. you can confirm this by running **docker images** command and the new image will be listed. you may also run a container directly off the image.
+
+<figure>
+	<a href="http://dbones.github.io/images/posts/2015/net-docker/dockerImages.JPG"><img src="http://dbones.github.io/images/posts/2015/net-docker/dockerImages.JPG"></img></a>
+	<figcaption><a href="http://dbones.github.io/images/posts/2015/net-docker/dockerImages.JPG" title="images on the linux machine">images on the linux machine</a>.</figcaption>
+</figure>
