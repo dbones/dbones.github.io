@@ -82,7 +82,7 @@ For this part I cheat a little and use VM setup via Vagrant using the *box-cutte
 
 3. Create a file called "Dockerfile" no extension, if you do this in VS code it will supply some level of syntax support.
 
-Dockerfile
+**Dockerfile**
 
 {% highlight text %}
 FROM mono
@@ -106,4 +106,117 @@ docker build -t "dbones/testnet" .
 <figure>
 	<a href="http://dbones.github.io/images/posts/2015/net-docker/dockerImages.JPG"><img src="http://dbones.github.io/images/posts/2015/net-docker/dockerImages.JPG"></img></a>
 	<figcaption><a href="http://dbones.github.io/images/posts/2015/net-docker/dockerImages.JPG" title="images on the linux machine">images on the linux machine</a>.</figcaption>
+</figure>
+
+##Step 3 - publishing 
+
+once you have built the image, you can run it directly, or publish it, and then you can run it on another computer ( :) ), I want to do the later.
+
+1. while in your docker command, and that you have logged into your docker registry (**docker login* command), now run the push
+
+{% highlight text %}
+docker push dbones/testnet
+{% endhighlight %}
+
+done. you can goto docker hub and see the image.
+
+##Step 4 - install and run.
+
+ok there are a couple of ways, it depends on your setup, i would recondmend looking into a docker orchestrator such as Rancher, kubernetes etc. 
+
+####A) using pure docker
+
+if you want to run docker directly, no compose or orchestrator, that is not a problem, just follow these instructions.
+
+1. on the linux server with docker installed call the following command.
+
+{% highlight text %}
+docker run -p 8080:80 -d dbones/testnet
+{% endhighlight %}
+
+this exposes port 80 of the container on port 8080 on the host pc, 
+to test this
+
+- *curl http://0.0.0.0:8080* and it would access your site
+- *docker ps* would list all active containers on the server, our container should be listed. 
+
+<figure>
+	<a href="http://dbones.github.io/images/posts/2015/net-docker/dockerProcesses.JPG"><img src="http://dbones.github.io/images/posts/2015/net-docker/dockerProcesses.JPG"></img></a>
+	<figcaption><a href="http://dbones.github.io/images/posts/2015/net-docker/dockerProcesses.JPG" title="running containers">running containers</a>.</figcaption>
+</figure>
+
+
+####B) using Rancher UI
+
+this assumes we have the following setup:
+ 
+- 2 servers with a label of server=application and 
+- 1 server with a label of server=proxy
+
+in this setup we access the Nancy application through a loadbalancer
+
+<figure>
+	<a href="http://dbones.github.io/images/posts/2015/net-docker/setup.JPG"><img src="http://dbones.github.io/images/posts/2015/net-docker/setup.JPG"></img></a>
+	<figcaption><a href="http://dbones.github.io/images/posts/2015/net-docker/setup.JPG" title="setup - running a load balancer over 2 instances of the nancy application">setup - running a load balancer over 2 instances of the nancy application</a>.</figcaption>
+</figure>
+
+1. create a stack called **test**
+2. copy the following into the docker-compose.yaml and docker-compose-yaml boxes.
+
+**docker-compose.yaml**
+
+{% highlight yaml %}
+hello-world-lb:
+ports:
+- 80:80
+labels:
+    io.rancher.scheduler.affinity:host_label: server=proxy
+tty: true
+image: rancher/load-balancer-service
+links:
+- hello-world:hello-world
+stdin_open: true
+hello-world:
+labels:
+    io.rancher.scheduler.affinity:container_ne: hello-world
+    io.rancher.scheduler.affinity:host_label: server=application
+tty: true
+image: dbones/testnet
+stdin_open: true
+{% endhighlight %}
+
+**rancher-compose.yaml**
+
+{% highlight yaml %}
+hello-world-lb:
+scale: 1
+health_check:
+    port: 42
+    interval: 2000
+    unhealthy_threshold: 3
+    healthy_threshold: 2
+    response_timeout: 2000
+hello-world:
+scale: 2
+health_check:
+    port: 80
+    interval: 2000
+    unhealthy_threshold: 3
+    request_line: GET / HTTP/1.0
+    healthy_threshold: 2
+    response_timeout: 2000
+{% endhighlight %}
+
+3. click on the play buttons.
+
+<figure>
+	<a href="http://dbones.github.io/images/posts/2015/net-docker/onRancher.JPG"><img src="http://dbones.github.io/images/posts/2015/net-docker/onRancher.JPG"></img></a>
+	<figcaption><a href="http://dbones.github.io/images/posts/2015/net-docker/onRancher.JPG" title="running containers using rancher to manage them/">running containers using rancher to manage them/</a>.</figcaption>
+</figure>
+
+you will now see that we have 3 containers deployed and running and that we can access the site through the proxy server.
+
+<figure>
+	<a href="http://dbones.github.io/images/posts/2015/net-docker/rancherServers.JPG"><img src="http://dbones.github.io/images/posts/2015/net-docker/rancherServers.JPG"></img></a>
+	<figcaption><a href="http://dbones.github.io/images/posts/2015/net-docker/rancherServers.JPG" title="we can see the containers on the correct servers">we can see the containers on the correct servers</a>.</figcaption>
 </figure>
