@@ -84,7 +84,7 @@ For this part I cheat a little and use VM setup via Vagrant using the *box-cutte
 
 Dockerfile
 
-{% highlight plain %}
+{% highlight text %}
 FROM mono
 COPY . /serv
 CMD [ "mono",  "/serv/TestMvc.Host.exe" ]
