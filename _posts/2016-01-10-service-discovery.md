@@ -2,8 +2,8 @@
 published: true
 layout: post
 title: Microservices - part 3 - Service Location and Load Balancing
-description: Microservices - Part 2 - Api Gateway, encapsulate your services.
-date: 2015-11-15
+description: Microservices - Part 3 - routing messages to the corrext service instance.
+date: 2016-01-10
 tags: [microservice, architecture]
 comments: false
 ---
