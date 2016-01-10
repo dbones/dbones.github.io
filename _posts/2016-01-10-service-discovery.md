@@ -1,0 +1,98 @@
+---
+published: true
+layout: post
+title: Microservices - part 3 - Service Location and Load Balancing
+description: Microservices - Part 2 - Api Gateway, encapsulate your services.
+date: 2015-11-15
+tags: [microservice, architecture]
+comments: false
+---
+
+When we split our application into multiple services we need a way to locate an instance of a service.
+
+##TL;DR;
+
+A component, or components, which handle the 
+
+- location of service instance, 
+- load balance requests to a service instance. 
+
+this can be done by a few different ways, including:
+
+- Dns lookup
+- Service Locator + load balancer
+- Queues (such as rabbit)
+
+note: the first 2 require something to maintain the registry.
+
+#Service location
+
+With the of hosting multiple instances of a service, located 1 or more machines. We need to be able to route massages to the correct endpoint.
+
+for example, here is the ApiGateway requiring to route messages to services.
+
+<figure>
+	<a href="http://dbones.github.io/images/posts/2015/microservices/client-depends-on-services-directly.JPG"><img src="http://dbones.github.io/images/posts/2015/microservices/apiGateway-requires-service-location.JPG"></img></a>
+	<figcaption><a href="http://dbones.github.io/images/posts/2015/microservices/apiGateway-requires-service-location.JPG" title="Microserive">How does the Api Gateway know where the services are located</a>.</figcaption>
+</figure>
+ 
+
+A possible (limited) solution would be to assign Host entires to each service, however this will not solve the issue of multiple instances and load balancing (check out the DNS solution).
+
+Here are some solutions
+
+##DNS
+
+Using the DNS is a simple solution, where all the instances of a service register with the DNS. 
+
+Now when when we require the location of a service, we do a DNS lookup and it returns the loction of all (active) instances of the service (multiple A records).
+
+It is upto the us (the calling client) [to randomly pick an entry](https://github.com/rancher/rancher/issues/1401).
+
+<figure>
+	<a href="http://dbones.github.io/images/posts/2015/microservices/serviceDiscovery-dns.JPG"><img src="http://dbones.github.io/images/posts/2015/microservices/serviceDiscovery-dns.JPG"></img></a>
+	<figcaption><a href="http://dbones.github.io/images/posts/2015/microservices/serviceDiscovery-dns.JPG" title="Dns lookup">Dns service lookup</a>.</figcaption>
+</figure>
+
+##Loadbalancer + Registry
+
+Another way is to combine a couple of components such as a LoadBalancer + Registry. 
+
+In this case the service instances will register with a Registry (ZooKeeper, Ectd, or a DNS for example). This is where the list of active services will be maintained.
+
+Now each request will be routed through a loadbalancer (HA proxy, Nginx). In this case we can make use of the loadbalancer stratgies (round robin or more advance ones), effectively removing the repsonsibily of routing from the client.
+
+<figure>
+	<a href="http://dbones.github.io/images/posts/2015/microservices/serviceDiscovery-registry.JPG"><img src="http://dbones.github.io/images/posts/2015/microservices/serviceDiscovery-registry.JPG"></img></a>
+	<figcaption><a href="http://dbones.github.io/images/posts/2015/microservices/serviceDiscovery-registry.JPG" title="loadbalancer + registry lookup">loadbalancer + registry service lookup</a>.</figcaption>
+</figure>
+
+ 
+##Queue Broker
+
+With queues such as rabbit, you will natually get service location (as it naturally routes messages), also you can achieve load balancing (with rabbit this is done via the prefetch). 
+
+By setting the number of messages each consumer can actively handle, the broker will now load balance messages (instead of sending all of them to single consumer instance).
+
+<figure>
+	<a href="http://dbones.github.io/images/posts/2015/microservices/serviceDiscovery-Amqp.JPG"><img src="http://dbones.github.io/images/posts/2015/microservices/serviceDiscovery-Amqp.JPG"></img></a>
+	<figcaption><a href="http://dbones.github.io/images/posts/2015/microservices/serviceDiscovery-Amqp.JPG" title="amqp lookup and balancer">Amqp as the loadbalancer + registry service lookup</a>.</figcaption>
+</figure>
+
+#Side Note
+
+With the first 2 options you actively need to keep the registry up-to-date, with the last solution this is automatically taken care of.
+
+
+##Off the shelf
+
+Given the side note it may be worth investing in a mange solution such as:
+
+- [Rancher](http://rancher.com/)
+- [Kuberneties](http://kubernetes.io/)
+
+Both offer a solutions towards the first 2 scenarios mentioned here, as well as keeping the registry up-to-date.
+
+and for the 3rd scenario, consider using 
+
+- [RabbitMq](https://www.rabbitmq.com/)
