@@ -37,12 +37,12 @@ for each of these projects I have a mirror project called Common (going to renam
 
 <figure>
 	<a href="http://dbones.github.io/images/posts/2016/ms-project-struct/dotnet-3-project-structure.png"><img src="http://dbones.github.io/images/posts/2016/ms-project-struct/dotnet-3-project-structure.png"></img></a>
-	<figcaption><a href="http://dbones.github.io/images/posts/2016/ms-project-struct/dotnet-3-project-structure.png" title="2 Microservices">2 Microservices</a>.</figcaption>
+	<figcaption><a href="http://dbones.github.io/images/posts/2016/ms-project-struct/dotnet-3-project-structure.png" title="2 services">2 services</a>.</figcaption>
 </figure>
 
 you can see above that the sync service depends on the security.dto, in this case it subscribes to one of its events.
 
-## Core
+## Core Project
 
 Loosely based on a hexagonal architecture, the core contains the domain classes, ports (commands and queries) and adopters (consumers, controlllers).
 
@@ -86,7 +86,7 @@ Ports
 Models
 ```
 
-## Dto
+## Dto Project
 
 Any message definition which is shared outside the boundary context of the service is placed in here. These classes are shared with other services.
 
@@ -98,7 +98,7 @@ In addition to events, I have an empty interface (used as a meta data marker) ca
 
 All messages (events, requests) inherit a base message class, which contains some generic context data about the message.
 
-## Host
+## Host Project
 
 Where you host your (micro)service, is it a windows service, IIS application, console line etc. Where it is hosted must not change any of your Core, or Dto projects. so i keep it separated. I use the last one, and run this in a docker container.
 
