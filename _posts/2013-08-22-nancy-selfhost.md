@@ -45,7 +45,7 @@ class Program
 }
 {% endhighlight %}
 
-#Create the App class
+# Create the App class
 The App class is a simple way for to encapsulate the application start and stop, at this point we will create/start the Nancy host, using Port 1234, and also close/dispose of it when we are done.
 
 {% highlight csharp %}
@@ -67,7 +67,7 @@ public class App
 }
 {% endhighlight %}
 
-#Set-up a module
+# Set-up a module
 Nancy uses modules to set-up the server, in this example we are going to copy the code off the wiki.
 
 {% highlight csharp %}
@@ -80,7 +80,7 @@ public class HelloModule : NancyModule
 }
 {% endhighlight %}
 
-#Run
+# Run
 Run the application, **F5** should open a console application, open up you browser and navigate to **http://localhost:1234**, it should just display:
 
 >Hello World

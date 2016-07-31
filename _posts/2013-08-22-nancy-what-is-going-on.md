@@ -11,7 +11,7 @@ One key aspect of a framework is to gain tracing and diagnostic information. One
 
 The good news is Nancy includes a diagnostic/set-up site located @
 
->yousite/_Nancy
+>your-site/_Nancy
 
 in my example it is: 
 
@@ -41,7 +41,7 @@ public class CustomBootstrapper : DefaultNancyBootstrapper
 
 This example is using the default bootstrap, which uses *TinyIoC*, you can provide another base implementation.
 
-#Add request timing
+# Add request timing
 In version 0.18.0 the request tracing does not include the time taken for a request. however its not hard to add it. The framework provides a Trace log which we can write to during a request.
 
 In the code snippet above replace the following line:

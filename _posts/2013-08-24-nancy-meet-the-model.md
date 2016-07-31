@@ -17,7 +17,7 @@ so this is all exciting stuff.
 
 In this post I will look into a really important part of any web application, how to pass the model to the view. (which was easier than I thought it was going to be, bonus)
 
-#Update the Module
+# Update the Module
 updating the HelloModule:
 
 {% highlight csharp %}
@@ -38,7 +38,7 @@ Ok this is epic simple, I have a model which is a string, set to Dave. Original 
 
 Jokes aside note how we pass the model into the view, we are not using a method call (**View["index", name]**), this I think will catch me out sooner or later, but this is no big deal, and there is intelli sense for the newbies.
 
-#Update the View
+# Update the View
 The view I found to be more interesting, here is the code:
 
 {% highlight csharp %}

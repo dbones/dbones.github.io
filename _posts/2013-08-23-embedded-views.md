@@ -11,13 +11,13 @@ So far I have returned "Hello world" from the HelloWorldModule, and added a quic
 
 In this post, I wanted to start using the Razor ViewEngine.
 
-#Register the engine
+# Register the engine
 Add a reference to the Razor package
 > Nancy.Viewengines.Razor
 
 Now we support razor, well kind of (we will get to that). For now if you look at the server information the view engine is listed.
 
-#Add a simple view
+# Add a simple view
 I wanted to start off with a simple view (*helloworld* go figure)
 
 Alter the module to return a view, not using a model yet.
@@ -60,7 +60,7 @@ Root path: D:\Dev\vs default\TestNancy\TestNancy\bin\Debug
 
 The last bit provides the context, so this makes sense. and for me I want to get the embedded views to work. so i will solve this issue with embedded views.
 
-#ResourceViewLocationProvider to the rescue
+# ResourceViewLocationProvider to the rescue
 This bit took longer than i would like to mention, the main bit to note
 
 * ensure you override the correct methods in the bootstrapper
@@ -97,7 +97,7 @@ protected override NancyInternalConfiguration InternalConfiguration
 
 If we run our sample now we can now browse our site and see *Hello World* again. Check the trace logs, this provides a little more information. The process time has gone up a little, as you would expect 111ms from cold and 3ms when warm (this is running on my dev laptop, I may write a post on that later, but for now i7 4HGz, 32GB RAM and 7200RPM HDD)
 
-#Whats missing still
+# Whats missing still
 I still need to look into
 
 * static resources, jpg, css etc

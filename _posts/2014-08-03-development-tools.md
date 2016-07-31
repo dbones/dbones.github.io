@@ -12,7 +12,7 @@ There are a number of tools out there which help the development team deliver. I
 
 These notes are a little dated, and do not include PaaS in the solution, however this is not to say that we could alter and append the tools in the correct place. (I wanted to post then up as they seem to be collecting dust on my harddrive.)
 
-##Overview
+## Overview
 The following diagram **overviews** the main points where each tool plays a part in a continuous integration scenario. This solution favours a package management component and a release management tool.
 
 <figure>
@@ -29,7 +29,7 @@ The following diagram **overviews** the main points where each tool plays a part
 7.	(For web applications only) upon approval, a staff member can deploy the latest package to the official site.
 8.	(For library packages) A staff member can deploy the latest version into the 3rd party package repository
 
-###Build
+### Build
 Step 4 is a complex and very important step, the following is the overview of this step.
 
 <figure>
@@ -45,7 +45,7 @@ Step 4 is a complex and very important step, the following is the overview of th
 * Test Deploy – (Web applications only) automatically deploys the application onto the build environment.
 * Smoke Tests – executes automated tests which invoke actions on the UI ensuring the expected behaviour is observed.
 
-##Components
+## Components
 above was a generic overview, the following has been revised with my personal favourites. (for a .NET setup, some tools will obviously change if you are a Java or Ruby developer)
 
 <figure>
@@ -62,7 +62,7 @@ above was a generic overview, the following has been revised with my personal fa
 
 I do not mind using subversion, but I have found git with gitflow to be really nice to work with.
 
-##Gated check-ins?
+## Gated check-ins?
 We all make mistakes, but you do not need gated check-ins. No.
 
 The above will only package up and make available, code which passes automated checks. It also relies upon the developers being professional. (The release control should be done via senior members of the team.)

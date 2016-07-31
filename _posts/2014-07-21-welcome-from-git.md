@@ -6,11 +6,11 @@ tags: [git, blog]
 comments: true
 ---
 
-##A new blog engine.
+## A new blog engine.
 
 My blog at the moment has not been updated for a while. Mostly I have been publishing gists, not writing posts. My current blog engine requires some work and I have been meaning to change the back end to work with Markdown.
 
-##Solution:
+## Solution:
 Use Jekyll with Github, its already done!
 
 Well most of it. 
@@ -24,7 +24,7 @@ For an editor there is a choice.
 At the moment I do not mind either way.
 
 
-##TODO:
+## TODO:
 
 
 + Port existing posts across

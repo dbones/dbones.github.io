@@ -10,7 +10,7 @@ comments: false
 
 Using Mono, we can take advantage of both linux and docker, which equals some really exciting stuff. In this post we will take a C#, .NET 4.6 and Nancy "hello world" example and run this in a docker container. 
 
-##Pre-Req
+## Pre-Req
 
 for this example, the following tools are being used (replace with your tools of choice)
 
@@ -19,7 +19,7 @@ for this example, the following tools are being used (replace with your tools of
 - Docker Hub
 - Servers with docker on them (I like to use Rancher, as it makes this far easier to work with)
 
-##Step 1 - code
+## Step 1 - code
 
 Docker containers are designed to run a process and exit when they are complete. In our case we want a blocking application.
 
@@ -68,7 +68,7 @@ public class HelloModule : NancyModule
 	<figcaption><a href="http://dbones.github.io/images/posts/2015/net-docker/onWindows.JPG" title="on windows">on windows</a>.</figcaption>
 </figure>
 
-##Step 2 - Compiling a docker image
+## Step 2 - Compiling a docker image
 
 For this part I cheat a little and use VM setup via Vagrant using the *box-cutter/ubuntu1404-docker* image. 
 
@@ -108,7 +108,7 @@ docker build -t "dbones/testnet" .
 	<figcaption><a href="http://dbones.github.io/images/posts/2015/net-docker/dockerImages.JPG" title="images on the linux machine">images on the linux machine</a>.</figcaption>
 </figure>
 
-##Step 3 - publishing 
+## Step 3 - publishing 
 
 once you have built the image, you can run it directly, or publish it, and then you can run it on another computer ( :) ), I want to do the later.
 
@@ -120,11 +120,11 @@ docker push dbones/testnet
 
 done. you can goto docker hub and see the image.
 
-##Step 4 - install and run.
+## Step 4 - install and run.
 
 ok there are a couple of ways, it depends on your setup, i would recondmend looking into a docker orchestrator such as Rancher, kubernetes etc. 
 
-####A) using pure docker
+#### A) using pure docker
 
 if you want to run docker directly, no compose or orchestrator, that is not a problem, just follow these instructions.
 
@@ -146,14 +146,14 @@ to test this
 </figure>
 
 
-####B) using Rancher UI
+#### B) using Rancher UI
 
 this assumes we have the following setup:
  
 - 2 servers with a label of server=application and 
 - 1 server with a label of server=proxy
 
-in this setup we access the Nancy application through a loadbalancer
+in this setup we access the Nancy application through a load-balancer
 
 <figure>
 	<a href="http://dbones.github.io/images/posts/2015/net-docker/setup.JPG"><img src="http://dbones.github.io/images/posts/2015/net-docker/setup.JPG"></img></a>
