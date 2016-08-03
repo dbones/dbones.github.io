@@ -7,14 +7,13 @@ date: 2014-07-22
 tags: [projects, open-source]
 ---
 
-#Open Source
+# Open Source
 
 [Boxes](http://docs.dbones.co.uk/boxes.MainPage.ashx) - The aim of the Project is to simplify this task of a plug-in architecture for applications using the .NET Framework.
 
-#Non active projects
+# Non active projects
 
 [Xray](https://xrayioc.codeplex.com/) - A small development tool which shows the dependencies registered with the applications IoC container
-
 
 [DotDiff](https://dotdiff.codeplex.com/) - XML compare (really old, you can do better)
 
