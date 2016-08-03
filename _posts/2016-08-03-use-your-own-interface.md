@@ -2,8 +2,8 @@
 published: true
 layout: post
 title: use your own interface
-description: how I use interfaces
-date: 2016-07-23
+description: thoughts for abstracting out 3rd party dependencies
+date: 2016-08-03
 tags: [framework, architecture, dotnet]
 comments: false
 ---
