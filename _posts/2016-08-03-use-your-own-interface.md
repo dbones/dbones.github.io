@@ -21,7 +21,7 @@ the following are the points to consider.
 - be careful of using a nice interface in a 3rd party app directly, as it will bind you to the library (IE ASP.NET IDependencyResolver used in a windows service, does not sound correct)
 - 3rd party libraries have a shelf life (coupling on them has a level of risk)
 - consider what you abstract (apply an interface to), IE logger is easy, ORM is not
-- if you cannot easily abstract, encapsulate it the functionality
+- if you cannot easily abstract, then encapsulate the functionality
 - consider creating your own copy of an interface, which you can manage
 - if you have a number of interfaces consider a separate solution to store them in
 
