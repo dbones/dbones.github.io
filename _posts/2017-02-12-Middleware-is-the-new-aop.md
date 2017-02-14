@@ -14,13 +14,15 @@ This article has a quick look into this middleware pattern, as found in the ment
 
 **Note** impl can vary, depending on your framework.
 
+**Demo code** I have written a quick impl of a middleware component located here: https://github.com/dbones/middleware-example
+
 ## TL;DR;
 
 Middleware is a pattern to support separation of concerns, allowing each action to extend functionality without modifying the target code.
 
 It fills a similar goal to Chain-of-responsibility or AOP, where the main difference is AOP proxies (assuming a proxy approach) the entire target class.
 
-An implementation of this (middleware) pattern can be easy, in comparison to AOP, as it can be achieved without post compile weaving or dynamic proxy IL code (assuming the use of .NET). I have written a quick impl located here.
+An implementation of this (middleware) pattern can be easy, in comparison to AOP, as it can be achieved without post compile weaving or dynamic proxy IL code (assuming the use of .NET).
 
 Note: AOP is meant to be invisible to the rest of app, where-as middleware style, the app tends to be designed with it in mind.
 
@@ -129,3 +131,11 @@ this is quite interesting
 - Middleware requires an Action to invoke the the target (CommandAction in this case).
 - Middleware does not inherit off the TransferCommand, and does not impose any impl rules, i.e. virtual on methods are not required.
 
+# Running
+
+As the app has been setup, we can run and see that the actions intercept the execution.
+
+<figure>
+	<a href="http://dbones.github.io/images/posts/2017/middleware-the-new-aop/running.PNG"><img src="http://dbones.github.io/images/posts/2017/middleware-the-new-aop/running.PNG"></img></a>
+    <figcaption><a href="http://dbones.github.io/images/posts/2017/middleware-the-new-aop/running.PNG" title="running the code.">running the code</a>.</figcaption>
+</figure>
