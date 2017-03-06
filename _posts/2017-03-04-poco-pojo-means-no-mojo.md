@@ -84,6 +84,8 @@ Simply removing the **[inject]** we decouple the code from the IoC container.
 
 The example on the right, we take advantage of the IoC container's defult conventions. Where the container will select the Constructor which it can inject the most dependencies on.
 
+**NOTE** we could move all the transaction code to AOP or Middleware action.
+
 # Entity - Persistence dependency 
 
 **Goal:** entity classes should not be aware of persistence. Arguably it should not know of serialisation, or any mapping.
@@ -106,9 +108,7 @@ For the code to work on the right, we *should* be able to do nothing in addition
 
 If we wanted to provide more meta data, then we will need to provide a Class Map (which can be in code, and therefor refactoring tools will support).
 
-**NOTE:** Strictly the *[Required]* breaks the rules, however I am normally ok with this one as this does not add a further dependency, as the attribute is a standard one from .NET.
-
-**NOTE** we could move all the transaction code to AOP or Middleware action.
+**NOTE:** Strictly the **[Required]** breaks the rules, however I am normally ok with this one as mentioned earlier.
 
 # Quick observations
 
@@ -118,15 +118,10 @@ In both examples we remove unnecessary from the classes, meaning our classes uph
 - SOLID
 - Loose coupling, strong cohesion
 
-Most of the above means the same thing (its repeated several times, maybe take the hint)
+Most of the above means the same thing, its repeated several times, maybe take the hint ;)
 
-it all adds up to make code more **maintainable**.  
-
+This all adds up to make **code more maintainable**.  
 
 ## Other observations
 
-If you look at Java, for example Spring (including Spring Boot), they have moved away from XML files which they used to setup their frameworks in favor for Annotations/Attributes. This brings some advantages. 
-
-In .NET you will find frameworks now support *"Conventions over Configuration"* and allow to override using *"Fluent Configuration"* which try to support compile time validation.
-
-I would like to see Java frameworks make more use of Conventions and Fluent Configuration as an alternative to Annotations and XML config.
+In .NET you will find frameworks support *"Conventions over Configuration"* and allow to override conventions using *"Fluent Configuration"*, which try to support compile time validation.
