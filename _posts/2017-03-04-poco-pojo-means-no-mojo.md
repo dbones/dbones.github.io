@@ -112,7 +112,7 @@ If we wanted to provide more meta data, then we will need to provide a Class Map
 
 # Quick observations
 
-In both examples we remove unnecessary from the classes, meaning our classes uphold:
+In both examples we remove unnecessary code/dependencies from the classes, meaning our classes uphold:
 
 - Separation of concerns
 - SOLID
