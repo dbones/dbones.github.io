@@ -36,7 +36,7 @@ this is still high level, and does not tie down the structure inside each projec
 for each of these projects I have a mirror project called Common (going to renamed shortly) in my framework, which contains classes which are shared in my services, for example Service A and Service B, both will have a Host project, and both will make use of a class called App. so Common.Host will contain that type of class.
 
 <figure>
-	<a href="http://dbones.github.io/images/posts/2016/ms-project-struct/dotnet-3-project-structure.png"><img src="http://dbones.github.io/images/posts/2016/ms-project-struct/dotnet-3-project-structure.png"></img></a>
+	<a href="http://dbones.github.io/images/posts/2016/ms-project-struct/dotnet-3-project-structure.png"><img src="http://dbones.github.io/images/posts/2016/ms-project-struct/dotnet-3-project-structure.png" /></a>
 	<figcaption><a href="http://dbones.github.io/images/posts/2016/ms-project-struct/dotnet-3-project-structure.png" title="2 services">2 services</a>.</figcaption>
 </figure>
 

@@ -37,7 +37,7 @@ the last 2 requirements are cross cutting concerns, and not to do with transferr
 In this example we can use middleware actions to accomplish this logic.
 
 <figure>
-	<a href="http://dbones.github.io/images/posts/2017/middleware-the-new-aop/overview.PNG"><img src="http://dbones.github.io/images/posts/2017/middleware-the-new-aop/overview.PNG"></img></a>
+	<a href="http://dbones.github.io/images/posts/2017/middleware-the-new-aop/overview.PNG"><img src="http://dbones.github.io/images/posts/2017/middleware-the-new-aop/overview.PNG" /></a>
 	<figcaption><a href="http://dbones.github.io/images/posts/2016/middleware-the-new-aop/overview.PNG" title="overview">overview</a>.</figcaption>
 </figure>
 
@@ -116,7 +116,7 @@ At the moment we have the separate elements such as the TransferCommand and Acti
 To make this complete, we need to configure the app to use it. As this is demo code, the following is minimal impl to show the concept.
 
 <figure>
-	<a href="http://dbones.github.io/images/posts/2017/middleware-the-new-aop/setup.PNG"><img src="http://dbones.github.io/images/posts/2017/middleware-the-new-aop/setup.PNG"></img></a>
+	<a href="http://dbones.github.io/images/posts/2017/middleware-the-new-aop/setup.PNG"><img src="http://dbones.github.io/images/posts/2017/middleware-the-new-aop/setup.PNG" /></a>
     <figcaption><a href="http://dbones.github.io/images/posts/2017/middleware-the-new-aop/setup.PNG" title="setup">the setup of the middleware (left) and AOP (right)</a>.</figcaption>
 </figure>
 
@@ -136,6 +136,6 @@ this is quite interesting
 As the app has been setup, we can run and see that the actions intercept the execution.
 
 <figure>
-	<a href="http://dbones.github.io/images/posts/2017/middleware-the-new-aop/running.PNG"><img src="http://dbones.github.io/images/posts/2017/middleware-the-new-aop/running.PNG"></img></a>
+	<a href="http://dbones.github.io/images/posts/2017/middleware-the-new-aop/running.PNG"><img src="http://dbones.github.io/images/posts/2017/middleware-the-new-aop/running.PNG" /></a>
     <figcaption><a href="http://dbones.github.io/images/posts/2017/middleware-the-new-aop/running.PNG" title="running the code.">running the code</a>.</figcaption>
 </figure>

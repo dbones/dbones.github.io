@@ -32,7 +32,7 @@ With the of hosting multiple instances of a service, located 1 or more machines.
 for example, here is the Api-Gateway requiring to route messages to services.
 
 <figure>
-	<a href="http://dbones.github.io/images/posts/2015/microservices/client-depends-on-services-directly.JPG"><img src="http://dbones.github.io/images/posts/2015/microservices/apiGateway-requires-service-location.JPG"></img></a>
+	<a href="http://dbones.github.io/images/posts/2015/microservices/client-depends-on-services-directly.JPG"><img src="http://dbones.github.io/images/posts/2015/microservices/apiGateway-requires-service-location.JPG" /></a>
 	<figcaption><a href="http://dbones.github.io/images/posts/2015/microservices/apiGateway-requires-service-location.JPG" title="Microserive">How does the Api Gateway know where the services are located</a>.</figcaption>
 </figure>
  
@@ -50,7 +50,7 @@ Now when when we require the location of a service, we do a DNS lookup and it re
 It is up to the us (the calling client) [to randomly pick an entry](https://github.com/rancher/rancher/issues/1401).
 
 <figure>
-	<a href="http://dbones.github.io/images/posts/2015/microservices/serviceDiscovery-dns.JPG"><img src="http://dbones.github.io/images/posts/2015/microservices/serviceDiscovery-dns.JPG"></img></a>
+	<a href="http://dbones.github.io/images/posts/2015/microservices/serviceDiscovery-dns.JPG"><img src="http://dbones.github.io/images/posts/2015/microservices/serviceDiscovery-dns.JPG" /></a>
 	<figcaption><a href="http://dbones.github.io/images/posts/2015/microservices/serviceDiscovery-dns.JPG" title="Dns lookup">Dns service lookup</a>.</figcaption>
 </figure>
 
@@ -63,7 +63,7 @@ In this case the service instances will register with a Registry (ZooKeeper, Ect
 Now each request will be routed through a load-balancer (HA proxy, Nginx). In this case we can make use of the loadbalancer stratgies (round robin or more advance ones), effectively removing the responsibility of routing from the client.
 
 <figure>
-	<a href="http://dbones.github.io/images/posts/2015/microservices/serviceDiscovery-registry.JPG"><img src="http://dbones.github.io/images/posts/2015/microservices/serviceDiscovery-registry.JPG"></img></a>
+	<a href="http://dbones.github.io/images/posts/2015/microservices/serviceDiscovery-registry.JPG"><img src="http://dbones.github.io/images/posts/2015/microservices/serviceDiscovery-registry.JPG" /></a>
 	<figcaption><a href="http://dbones.github.io/images/posts/2015/microservices/serviceDiscovery-registry.JPG" title="loadbalancer + registry lookup">loadbalancer + registry service lookup</a>.</figcaption>
 </figure>
 
@@ -75,7 +75,7 @@ With queues such as rabbit, you will naturally get service location (as it natur
 By setting the number of messages each consumer can actively handle, the broker will now load balance messages (instead of sending all of them to single consumer instance).
 
 <figure>
-	<a href="http://dbones.github.io/images/posts/2015/microservices/serviceDiscovery-Amqp.JPG"><img src="http://dbones.github.io/images/posts/2015/microservices/serviceDiscovery-Amqp.JPG"></img></a>
+	<a href="http://dbones.github.io/images/posts/2015/microservices/serviceDiscovery-Amqp.JPG"><img src="http://dbones.github.io/images/posts/2015/microservices/serviceDiscovery-Amqp.JPG" /></a>
 	<figcaption><a href="http://dbones.github.io/images/posts/2015/microservices/serviceDiscovery-Amqp.JPG" title="amqp lookup and balancer">Amqp as the loadbalancer + registry service lookup</a>.</figcaption>
 </figure>
 

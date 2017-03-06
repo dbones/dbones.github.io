@@ -64,7 +64,7 @@ public class HelloModule : NancyModule
 **note 2:** we are hosting our service on port **80**.
 
 <figure>
-	<a href="http://dbones.github.io/images/posts/2015/net-docker/onWindows.JPG"><img src="http://dbones.github.io/images/posts/2015/net-docker/onWindows.JPG"></img></a>
+	<a href="http://dbones.github.io/images/posts/2015/net-docker/onWindows.JPG"><img src="http://dbones.github.io/images/posts/2015/net-docker/onWindows.JPG" /></a>
 	<figcaption><a href="http://dbones.github.io/images/posts/2015/net-docker/onWindows.JPG" title="on windows">on windows</a>.</figcaption>
 </figure>
 
@@ -76,7 +76,7 @@ For this part I cheat a little and use VM setup via Vagrant using the *box-cutte
 2. Copy the compiled filed into the new **releaseImage**, all the dll's and exe.
 
 <figure>
-	<a href="http://dbones.github.io/images/posts/2015/net-docker/vmFolder.JPG"><img src="http://dbones.github.io/images/posts/2015/net-docker/vmFolder.JPG"></img></a>
+	<a href="http://dbones.github.io/images/posts/2015/net-docker/vmFolder.JPG"><img src="http://dbones.github.io/images/posts/2015/net-docker/vmFolder.JPG" /></a>
 	<figcaption><a href="http://dbones.github.io/images/posts/2015/net-docker/vmFolder.JPG" title="contents of the releaseImage folder">contents of the releaseImage folder</a>.</figcaption>
 </figure>
 
@@ -104,7 +104,7 @@ docker build -t "dbones/testnet" .
 7. you can confirm this by running **docker images** command and the new image will be listed. you may also run a container directly off the image.
 
 <figure>
-	<a href="http://dbones.github.io/images/posts/2015/net-docker/dockerImages.JPG"><img src="http://dbones.github.io/images/posts/2015/net-docker/dockerImages.JPG"></img></a>
+	<a href="http://dbones.github.io/images/posts/2015/net-docker/dockerImages.JPG"><img src="http://dbones.github.io/images/posts/2015/net-docker/dockerImages.JPG" /></a>
 	<figcaption><a href="http://dbones.github.io/images/posts/2015/net-docker/dockerImages.JPG" title="images on the linux machine">images on the linux machine</a>.</figcaption>
 </figure>
 
@@ -141,7 +141,7 @@ to test this
 - *docker ps* would list all active containers on the server, our container should be listed. 
 
 <figure>
-	<a href="http://dbones.github.io/images/posts/2015/net-docker/dockerProcesses.JPG"><img src="http://dbones.github.io/images/posts/2015/net-docker/dockerProcesses.JPG"></img></a>
+	<a href="http://dbones.github.io/images/posts/2015/net-docker/dockerProcesses.JPG"><img src="http://dbones.github.io/images/posts/2015/net-docker/dockerProcesses.JPG" /></a>
 	<figcaption><a href="http://dbones.github.io/images/posts/2015/net-docker/dockerProcesses.JPG" title="running containers">running containers</a>.</figcaption>
 </figure>
 
@@ -156,7 +156,7 @@ this assumes we have the following setup:
 in this setup we access the Nancy application through a load-balancer
 
 <figure>
-	<a href="http://dbones.github.io/images/posts/2015/net-docker/setup.JPG"><img src="http://dbones.github.io/images/posts/2015/net-docker/setup.JPG"></img></a>
+	<a href="http://dbones.github.io/images/posts/2015/net-docker/setup.JPG"><img src="http://dbones.github.io/images/posts/2015/net-docker/setup.JPG" /></a>
 	<figcaption><a href="http://dbones.github.io/images/posts/2015/net-docker/setup.JPG" title="setup - running a load balancer over 2 instances of the nancy application">setup - running a load balancer over 2 instances of the nancy application</a>.</figcaption>
 </figure>
 
@@ -210,13 +210,13 @@ hello-world:
 3. click on the play buttons.
 
 <figure>
-	<a href="http://dbones.github.io/images/posts/2015/net-docker/onRancher.JPG"><img src="http://dbones.github.io/images/posts/2015/net-docker/onRancher.JPG"></img></a>
+	<a href="http://dbones.github.io/images/posts/2015/net-docker/onRancher.JPG"><img src="http://dbones.github.io/images/posts/2015/net-docker/onRancher.JPG" /></a>
 	<figcaption><a href="http://dbones.github.io/images/posts/2015/net-docker/onRancher.JPG" title="running containers using rancher to manage them/">running containers using rancher to manage them/</a>.</figcaption>
 </figure>
 
 you will now see that we have 3 containers deployed and running and that we can access the site through the proxy server.
 
 <figure>
-	<a href="http://dbones.github.io/images/posts/2015/net-docker/rancherServers.JPG"><img src="http://dbones.github.io/images/posts/2015/net-docker/rancherServers.JPG"></img></a>
+	<a href="http://dbones.github.io/images/posts/2015/net-docker/rancherServers.JPG"><img src="http://dbones.github.io/images/posts/2015/net-docker/rancherServers.JPG" /></a>
 	<figcaption><a href="http://dbones.github.io/images/posts/2015/net-docker/rancherServers.JPG" title="we can see the containers on the correct servers">we can see the containers on the correct servers</a>.</figcaption>
 </figure>

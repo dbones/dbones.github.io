@@ -25,14 +25,14 @@ Before pushing an Api gateway into your architecture lets understand the problem
 Given we have a client, it would need to contact to various microservices, which leads to complexities such as Service Discovery, Security, handling different protocols etc. From the service provider we could see issues as increased surface attack area, difficult to encapsulate logic. 
 
 <figure>
-	<a href="http://dbones.github.io/images/posts/2015/microservices/client-depends-on-services-directly.JPG"><img src="http://dbones.github.io/images/posts/2015/microservices/client-depends-on-services-directly.JPG"></img></a>
+	<a href="http://dbones.github.io/images/posts/2015/microservices/client-depends-on-services-directly.JPG"><img src="http://dbones.github.io/images/posts/2015/microservices/client-depends-on-services-directly.JPG" /></a>
 	<figcaption><a href="http://dbones.github.io/images/posts/2015/microservices/client-depends-on-services-directly.JPG" title="Microserive">Direct access to services</a>.</figcaption>
 </figure>
 
 Introducing the Api Gateways will simplify the connection between the client and the entire application, by being the single (please ensure it can be scaled) consistent endpoint, and provide a place to tackle some of the concerns mentioned before.
 
 <figure>
-	<a href="http://dbones.github.io/images/posts/2015/microservices/apiGateway-encapsulates-services.JPG"><img src="http://dbones.github.io/images/posts/2015/microservices/apiGateway-encapsulates-services.JPG"></img></a>
+	<a href="http://dbones.github.io/images/posts/2015/microservices/apiGateway-encapsulates-services.JPG"><img src="http://dbones.github.io/images/posts/2015/microservices/apiGateway-encapsulates-services.JPG" /></a>
 	<figcaption><a href="http://dbones.github.io/images/posts/2015/microservices/apiGateway-encapsulates-services.JPG" title="Microserive">Api Gateway encapsulates services</a>.</figcaption>
 </figure>
 

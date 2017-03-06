@@ -24,7 +24,7 @@ general guidance is that each Microservice follows
 # Microservice
 
 <figure>
-	<a href="http://dbones.github.io/images/posts/2015/microservices/service-boundary.JPG"><img src="http://dbones.github.io/images/posts/2015/microservices/service-boundary.JPG"></img></a>
+	<a href="http://dbones.github.io/images/posts/2015/microservices/service-boundary.JPG"><img src="http://dbones.github.io/images/posts/2015/microservices/service-boundary.JPG" /></a>
 	<figcaption><a href="http://dbones.github.io/images/posts/2015/microservices/service-boundary.JPG" title="Microserive">Microservice</a>.</figcaption>
 </figure>
 
@@ -49,7 +49,7 @@ As mentioned you can achieve both styles with both HTTP and AMQP.
 ### HTTP
 
 <figure>
-	<a href="http://dbones.github.io/images/posts/2015/microservices/service-http.JPG"><img src="http://dbones.github.io/images/posts/2015/microservices/service-http.JPG"></img></a>
+	<a href="http://dbones.github.io/images/posts/2015/microservices/service-http.JPG"><img src="http://dbones.github.io/images/posts/2015/microservices/service-http.JPG" /></a>
 	<figcaption><a href="http://dbones.github.io/images/posts/2015/microservices/service-http.JPG" title="Microserive">Access services via HTTP</a>.</figcaption>
 </figure>
 
@@ -63,7 +63,7 @@ The challenge with this style has been service discovery and load-balancing (I w
 ### AMQP
 
 <figure>
-	<a href="http://dbones.github.io/images/posts/2015/microservices/service-amqp.JPG"><img src="http://dbones.github.io/images/posts/2015/microservices/service-amqp.JPG"></img></a>
+	<a href="http://dbones.github.io/images/posts/2015/microservices/service-amqp.JPG"><img src="http://dbones.github.io/images/posts/2015/microservices/service-amqp.JPG" /></a>
 	<figcaption><a href="http://dbones.github.io/images/posts/2015/microservices/service-amqp.JPG" title="Microserive">Access services Via AMQP</a>.</figcaption>
 </figure>
 
@@ -82,7 +82,7 @@ This solution provides a couple of interesting side effects.
 ## Resources (internal dependencies)
 
 <figure>
-	<a href="http://dbones.github.io/images/posts/2015/microservices/service-boundary-donot access-others.JPG"><img src="http://dbones.github.io/images/posts/2015/microservices/service-boundary-donot access-others.JPG"></img></a>
+	<a href="http://dbones.github.io/images/posts/2015/microservices/service-boundary-donot access-others.JPG"><img src="http://dbones.github.io/images/posts/2015/microservices/service-boundary-donot access-others.JPG" /></a>
 	<figcaption><a href="http://dbones.github.io/images/posts/2015/microservices/service-boundary-donot access-others.JPG" title="Encapsulte resources">Microservice</a>.</figcaption>
 </figure>
 
