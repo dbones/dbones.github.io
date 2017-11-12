@@ -91,7 +91,7 @@ Given the side note it may be worth investing in a mange solution such as:
 - [Kuberneties](http://kubernetes.io/)
 - [Docker - swarm mode](https://blog.docker.com/2016/06/docker-1-12-built-in-orchestration/) - v1.12
 
-Both offer a solutions towards the first 2 scenarios mentioned here, as well as keeping the registry up-to-date.
+these offer a solution towards the first 2 scenarios mentioned here, as well as keeping the registry up-to-date.
 
 and for the 3rd scenario, consider using 
 
