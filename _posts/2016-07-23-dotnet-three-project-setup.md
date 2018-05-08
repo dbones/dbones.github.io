@@ -55,15 +55,15 @@ ports to me are the protocol, the logic, the api of what the service can do. I a
 
 I allow commands to use queries.
 
-### Adopters
+### Adapters
 
-adopters, adapt the input to invoke commands or queries (ports)
+adapters, adapt the input to invoke commands or queries (ports)
 
 - consumers, subscribe to events (messages) and invoke commands.
 - controllers, normally http (note I use nancyfx or asp.net mvc directly), they adapt the http request message and call commands or queries as necessary before responding.
 - responders, used to apply Request / Response over a bus, works the same way as controllers.
 
-what about the other adopters such as the database, and etc? well the 3 above provide the means to invoke ports from another process. There are a number of other adaptors but these are invoked inside the quieries or adaptors.
+what about the other adapters such as the database, and etc? well the 3 above provide the means to invoke ports from another process. There are a number of other adaptors but these are invoked inside the quieries or adaptors.
 
 The core project depends on interfaces such as ISession, or IBus, and not on concrete implementations. To enable this I have my own base framework, which provides both the interfaces and offers several implementations, such as IBus interface and 2 implementations, MemoryBus and EasyNetQBus.
 
