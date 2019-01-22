@@ -25,7 +25,7 @@ provides some of the epic features such as: Fluent Registrations, Multple Lifest
 <br />
 
 <div style="clear: left">
-<a href="https://github.com/dbones/bonsai">
+<a href="https://bitbucket.org/dboneslabs/mpr/">
 <img src="https://bitbucket-assetroot.s3.amazonaws.com/c/photos/2018/Sep/14/1288517134-6-mpr-logo_avatar.png" alt="drawing" height="120" style="float:left;" /></a>
 
 mpr => Object mapper for Typescript and JavaScript.
@@ -37,7 +37,7 @@ Removes the mundane copying values from source to destination, with support for 
 <br />
 
 <div style="clear: left">
-<a href="https://github.com/dbones/bonsai">
+<a href="https://bitbucket.org/dboneslabs/arm-chair/">
 <img src="https://bytebucket.org/ravatar/%7Ba6c7471f-2808-4f5d-8763-f8a158fde6dc%7D?ts=522619" alt="drawing" height="120" style="float:left;" /></a>
 
 ArmChair => unit of work + couchdb.
