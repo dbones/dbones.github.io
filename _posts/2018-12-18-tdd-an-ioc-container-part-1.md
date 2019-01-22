@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: TDD an IoC container - part 1 - prima
+title: TDD an IoC container - part 1 - primer
 description: using TDD to develop a simple IoC container.
 date: 2019-01-22
 tags: [dotnet, tdd]
