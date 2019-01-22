@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: TDD an IoC container - part 3 - Perfomance Refactor
+title: TDD an IoC container - part 3 - Performance Refactor
 description: using TDD to develop a simple IoC container.
 date: 2019-01-23
 tags: [dotnet, tdd]
@@ -12,7 +12,7 @@ This post series looks into how I apply TDD in order to have **confidence** in w
 
 In this post I wanted to jump to a fun subject of writing an IoC container, and that is performance. We will look into some refactoring which will improve our performance, and use our tests to ensure we still provide the required service.
 
-**NOTE**: in this post we are looking into microseconds (uS) and nanoseconds (nS), *normal* application code should not need to go to these lenghs.
+**NOTE**: in this post we are looking into microseconds (uS) and nanoseconds (nS), *normal* application code should not need to go to these lengths.
 
 ## TL;DR;
 
@@ -37,7 +37,7 @@ In order:
 - to know we have improvements, we need to have a baseline measure 
 - to know if we are performing well we need to have some competition which we can compete against.
 
-In .Net, we have a framework/tool called DotNetBenchMark which allows us to setup a test, which it runs continously in order to measure the performance (benchmark the code).
+In .Net, we have a framework/tool called DotNetBenchMark which allows us to setup a test, which it runs continuously in order to measure the performance (benchmark the code).
 
 Each benchmark which will measure a number of scenarios. in our case, we have 4
 
@@ -48,7 +48,7 @@ Each benchmark which will measure a number of scenarios. in our case, we have 4
 
 These should test how we create objects, from the calling the ctor, finding the contract, checking the instance cache and so on.
 
-We started with Castle Windsor and Autofac, 2 very respected containers. In the later tests we added Grace (holycow that is a fast container)
+We started with Castle Windsor and Autofac, 2 very respected containers. In the later tests we added Grace (holy cow that is a fast container)
 
 # Replace the reflection invocation
 
@@ -69,15 +69,15 @@ We have executed an initial run on the benchmarks. which showed some interesting
 
 from this we can say
 
-- the initial implementation looks to be competitive to Autofac, howerever the other 2 frameworks offer way more functionality.
+- the initial implementation looks to be competitive to Autofac, howsoever the other 2 frameworks offer way more functionality.
 
 - windsor seems to do something better when it comes to singletons.
 
-overral im a bit surprised by the performance, i would have thought Bones IoC would have been slower.
+overall im a bit surprised by the performance, i would have thought Bones IoC would have been slower.
 
 ## Step 2 - alternatives to reflection
 
-An easy win to improve our speed is to use an altervative solution to create objects with, as we all know reflection is slow (as you can see from below).
+An easy win to improve our speed is to use an alternative solution to create objects with, as we all know reflection is slow (as you can see from below).
 
 ![](https://raw.githubusercontent.com/dbones/dbones.github.io/master/images/posts/2019/bonsai/perf-02.PNG)
 
@@ -85,7 +85,7 @@ from this we can say
 
 - the compile code and expressions are almost the same speed around 25 nS, with 2 nanoseconds between them.
 
-- reflection is orders of magnatude slower.
+- reflection is orders of magnitude slower.
 
 - activator .....
 
@@ -105,7 +105,7 @@ We did this by replacing/refactoring the delegate builder method, and by re-runn
 
 Taking the trasient benchmark we are at 1.1 uS (microseconds) however if we look at creating objects without any IoC intervention it was at 24 nS (nanoseconds). Where is the gap and can it be closed?
 
-Grace, this is another IoC container, I would catagorise it as one of the new generation.
+Grace, this is another IoC container, I would categorize it as one of the new generation.
 
 ![](https://raw.githubusercontent.com/dbones/dbones.github.io/master/images/posts/2019/bonsai/perf-04.PNG)
 
@@ -119,7 +119,7 @@ Here are some things that cost time (note we are looking at nanoseconds):
 - Scope strategies
 - Guards (Code.Require)
 
-We need all of these componets, so its a case of how and when.
+We need all of these components, so its a case of how and when.
 
 **Lets start by removing/disabling parts of the pipeline to identify where the ROI is**
 
@@ -153,7 +153,7 @@ The current implementation cost a small amount of time, which looks to be around
 
 ## Contract Registry - Cost: 158.53~ nS 
 
-Each Resolve uses a ServiceKey's hash inorder to find the ```contract``` from a dictionary, this is should be fast, with a **O(1)**. Where the contract contains all the information on how to create an instance. 
+Each Resolve uses a ServiceKey's hash in-order to find the ```contract``` from a dictionary, this is should be fast, with a **O(1)**. Where the contract contains all the information on how to create an instance. 
 
 ```
 //this is what the internal generated delegate would look like
@@ -185,12 +185,12 @@ This small change seemed to add to the count (ran the test twice). for now i wil
 
 ![](https://raw.githubusercontent.com/dbones/dbones.github.io/master/images/posts/2019/bonsai/perf-05.PNG)
 
-We did not hit the Ultra-Fast speed of Grace, however we have implmented a significant improvement.
+We did not hit the Ultra-Fast speed of Grace, however we have implemented a significant improvement.
 
 I have noticed that some of the other containers use their own collections in order to gain performance increases form AVL to HashTables.
 
-However we did find several area's which will significantly improve the performce.
+However we did find several area's which will significantly improve the performance.
 
 The winner items here were the compiled Expressions and tracking.
 
-Concurancy access to the instance cache and an alternative to tracking has not been fully looked into. (may do a seperate post on these).
+Concurrency access to the instance cache and an alternative to tracking has not been fully looked into. (may do a separate post on these).

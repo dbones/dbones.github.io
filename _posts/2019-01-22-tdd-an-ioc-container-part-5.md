@@ -17,7 +17,7 @@ At this point we have
 - developed a small IoC container, its not complete, but it does work 
 - A number of automated tests which detail the features and can double up as documentation
 - Automated CI pipeline
-- project avalible to all to view
+- project available to all to view
 
 # Retro
 
@@ -40,8 +40,8 @@ Did we succeed ?
 - A number of tests covering a major set of functionality was written up front.
 - Tests drove a TDD cycle (Red -> Green -> Refactor), where we did refactor code several times.
 - Tests were aimed at the API, not at each individual class, this allowed for major refactoring of the code, without the need to touch the tests.
-- dotnet tooling was exellent to support this journey.
-- We did hit 80% covereage without really trying, i know some have struggled with this.
+- dotnet tooling was excellent to support this journey.
+- We did hit 80% coverage without really trying, i know some have struggled with this.
 - Really enjoyed the MSpec structure, i would like to see what others think of this too.
 
 **what could be improved:**
@@ -54,7 +54,7 @@ I'm sure there are more places to improve.
 
 # Conclusion
 
-We have a **start** of a fun **product**, it needs more refactoring to be fully battle harderned, however it does offerer some adavnce features already.
+We have a **start** of a fun **product**, it needs more refactoring to be fully battle hardened, however it does offerer some advanced features already.
 
 We have shown how tests can be written first
 

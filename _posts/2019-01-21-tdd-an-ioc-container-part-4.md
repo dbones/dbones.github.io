@@ -10,7 +10,7 @@ comments: false
 
 This post series looks into how I apply TDD in order to have **confidence** in what is developed.
 
-In this post I wanted to look a little into the tools used to continously run the tests, which ensured that we did not break the contract while we have been refactoring the code.
+In this post I wanted to look a little into the tools used to continuously run the tests, which ensured that we did not break the contract while we have been refactoring the code.
 
 ## catch-up
 
@@ -25,7 +25,7 @@ At this point we have
 
 We are coding in .NET Core (Standard), and we have started this project with a number of tests, which we have tried to use as the requirements.
 
-With regards to tools there are a number of tools at our disposal, and we will look at the local development tools as well as the continous integration tools.
+With regards to tools there are a number of tools at our disposal, and we will look at the local development tools as well as the continuos integration tools.
 
 # Testing Tools
 
@@ -47,7 +47,7 @@ I tried 2 different set of tools during the development of this library
 - [Coverlet](https://github.com/tonerdo/coverlet/) - dotnet Cli plugin which runs code coverage
 - [Test Explorer](https://marketplace.visualstudio.com/items?itemName=formulahendry.dotnet-test-explorer) - shows the runable tests - note this was able to run the tests, however the experience is not 100%. (at the time of writing)
 
-Code supports .NET core really well, including some code refactorings. The best part to this setup was a small plugin which enabled code coverage to be seen against each line of code.
+Code supports .NET core really well, including some code refactoring. The best part to this setup was a small plugin which enabled code coverage to be seen against each line of code.
 
 In this setup we take advantage of the dotnet test adaptor (which runs MSpec) and use its watch command.
 
@@ -64,17 +64,17 @@ Now when we save a file, the tests are rerun and we get automatically updated in
 
 **Tools**
 
-- Rider => IDE (compile, test runnner and code coverage)
+- Rider => IDE (compile, test runner and code coverage)
 - MSpec plugin => provides great integration
 
-This experience was fully integrated, and offered the best experence with MSpec, allowing us to select a individual test as well as rerun all tests with code coverage on file saves.
+This experience was fully integrated, and offered the best experience with MSpec, allowing us to select a individual test as well as rerun all tests with code coverage on file saves.
 
 
 Either tool I fund to be a great place to code.
 
-# Continous Integrations
+# Continuous Integrations
 
-here we have several tools which try to ensure that quality is met/retained, and all of them run siliently in the background (to enable a smooth process)
+here we have several tools which try to ensure that quality is met/retained, and all of them run silently in the background (to enable a smooth process)
 
 - [Github](https://github.com/dbones/bonsai) - Source Control, somewhere to store the code, where others can hopefully contribute.
 - [AppVeyor](https://ci.appveyor.com/project/dbones/bonsai) - Build service
@@ -86,7 +86,7 @@ some notes on the above tools
 
 ##Testing
 
-Code Coverage is supplied by the same library as before Coverlet, however we need to configure it to produce reports in the OpenCover format inorder for CodeCov to process.
+Code Coverage is supplied by the same library as before Coverlet, however we need to configure it to produce reports in the OpenCover format in-order for CodeCov to process.
 
 ![](https://raw.githubusercontent.com/dbones/dbones.github.io/master/images/posts/2019/bonsai/CodeCov.PNG)
 
@@ -94,7 +94,7 @@ In addition AppVeyor supports a set of known result formats, luckly dotnet test 
 
 ![](https://raw.githubusercontent.com/dbones/dbones.github.io/master/images/posts/2019/bonsai/tests-on-ci.PNG)
 
-The folloing shows how these 2 reports are generated and then uploaded to the correct service endpoint.
+The following shows how these 2 reports are generated and then uploaded to the correct service endpoint.
 
 ```
 dotnet test --logger trx --results-directory ./results /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:Threshold=70 ./Bonsai.Tests
@@ -114,19 +114,19 @@ $wc.UploadFile("https://ci.appveyor.com/api/testresults/mstest/$($env:APPVEYOR_J
 The above took a little of digging around.
 
 
-## Quailty
+## Quality
 
 I have focused mostly on correctness (passing tests) and then on speed (benchmarks), however I do care about quality, thus I have included CodeCov within the tools.
 
-at this point we only Recieve a 'B', however the report includes a detailed output of where in the code the changes need to be made.
+at this point we only receive a 'B', however the report includes a detailed output of where in the code the changes need to be made.
 
 ![](https://raw.githubusercontent.com/dbones/dbones.github.io/master/images/posts/2019/bonsai/quality.PNG)
 
-at the moment I do not agree with a B score, I was hoping it to be more critical over the classes sizes and responsibilties. something to indicate if SRP may be broken. I will look more into this, to ensure that im not missing something.
+at the moment I do not agree with a B score, I was hoping it to be more critical over the classes sizes and responsibilities. something to indicate if SRP may be broken. I will look more into this, to ensure that im not missing something.
 
 
 # Wrap up
 
-For an open source project there are so many tools we can get our hands on to help with the continous integration of new changes.
+For an open source project there are so many tools we can get our hands on to help with the continuous integration of new changes.
 
 All of them offer great insight, of which we can act on in due course.

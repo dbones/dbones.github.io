@@ -16,7 +16,7 @@ This post starts the series with creating automated tests that will describe the
 
 ## TL;DR;
 - Its ok to do upfront design (just consider how much).
-- We should have a nice idea on the inital API look and feel.
+- We should have a nice idea on the initial API look and feel.
 - TDD is being applied at the API level (this is where our requirements are understood by all)
 - Just enough code to allow us to compile and run the tests (a lot of not implemented exceptions) 
 
@@ -24,22 +24,22 @@ This post starts the series with creating automated tests that will describe the
 
 The goal is write an IoC container in .NET Core, and only to write code that is required, each test should represent a requirement and that should force us to write code to pass (max out our code coverage).
 
-This will not be a perfect implementation (look at autofac or windsor for that), but it will show that you can write tests first (with a bit of design, as we hava an idea of what we want).
+This will not be a perfect implementation (look at autofac or windsor for that), but it will show that you can write tests first (with a bit of design, as we have an idea of what we want).
 
-A number of tests will be written up front, (we can retro on this later) with the precieved value that we should write code knowing a few of the use cases not just 1 at a time (hopefully this will speed this up).
+A number of tests will be written up front, (we can retro on this later) with the perceived value that we should write code knowing a few of the use cases not just 1 at a time (hopefully this will speed this up).
 
-No unit (class level tests), hmm this is a contraversal one for some people. The concept is that we only change the test when the requirement changes, this means when we refactor our code we can be sure that our test is ensuring that nothing is broken.
+No unit (class level tests), hmm this is a controversial one for some people. The concept is that we only change the test when the requirement changes, this means when we refactor our code we can be sure that our test is ensuring that nothing is broken.
 
 that seems enough to start with, lets actually start
 
 # Defining our interface
 
-Defining a large complex API is very hard to seperate into clear and concise tests. I **will cheat a little** and get and idea of the overal interface.
+Defining a large complex API is very hard to separate into clear and concise tests. I **will cheat a little** and get and idea of the overall interface.
 
-As i am a large fan of both Castle Windsor and AutoFac, I will draw inspiration from both of them (and reconmdned you use them)
+As i am a large fan of both Castle Windsor and AutoFac, I will draw inspiration from both of them (and recommend you use them)
 
 
-Before we fall into any implemetation or design, lets look over (some of) the features we want (or at least consider):
+Before we fall into any implementation or design, lets look over (some of) the features we want (or at least consider):
 
 - Registration of contracts
 - Scopes (Transient, Singleton, and others)
@@ -56,9 +56,9 @@ builder.SetupModules(new RegisterContracts());
 var container = builder.Create();
 ```
 
-This tells a little more, that we want to support regiration through **Modules** (again similar to AutoFac and Windsor)
+This tells a little more, that we want to support remigration through **Modules** (again similar to AutoFac and Windsor)
 
-Ok lets look how we want the setup to work insdie a module (again at the high level, we have no implementation), a small fluent interface is always a nice touch.
+Ok lets look how we want the setup to work inside a module (again at the high level, we have no implementation), a small fluent interface is always a nice touch.
 
 ```
 public void Setup(ContainerBuilder builder)
@@ -81,7 +81,7 @@ This is a simple overview of the intended interface use, it provides us with the
 
 # Defining the structure of a test.
 
-Now we have an idea on the API, we can define a consistant structure for our tests (consistancy should lead to simplier to maintin code). 
+Now we have an idea on the API, we can define a consistent structure for our tests (consistency should lead to simpler to maintain code). 
 
 the goal of each test
 
@@ -125,9 +125,11 @@ public class When_resolving_a_simple_service
 }
 ```
 
-This looks a little on the large size, however it allows each test to have thier own setup.
+This looks a little on the large size, however it allows each test to have their own setup.
 
 As we create this code, we need to create skeleton implementation classes (in order to make this to compile)
+
+![](https://raw.githubusercontent.com/dbones/dbones.github.io/master/images/posts/2019/bonsai/01%20-%20gettings%20specs%20to%20compile%2C%20minimal%20interface%20impl.PNG)
 
 However if we look at the test above it covers our goals:
 

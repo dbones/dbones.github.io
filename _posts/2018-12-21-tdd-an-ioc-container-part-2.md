@@ -15,7 +15,7 @@ In this post we wil look at how to tackle the complex api in order to get a smal
 ## TL;DR;
 
 - take the easiest test (with most value) and make it work (it may cover more code than you think), then we can refactor.
-- think about the high level design to make refactoring slighly easier.
+- think about the high level design to make refactoring slightly easier.
 - spikes and looking at exiting code (my previous implementations) help articulate thoughts
 
 ## recap
@@ -37,7 +37,7 @@ In order to make this happen we need to design and implement:
 
 - some of the registration
 - creation of the container / scope
-- resolving of the logger (constuctor injection)
+- resolving of the logger (constructor injection)
 
 wow that is a lot.
 
@@ -49,12 +49,12 @@ So we are delivering a smaller part, by far.
 
 the main parts of the work is creating the container and resolving the instance.
 
-ok we have a few areas which we need to consider (some of these are distinctly identifable from the tests).
+ok we have a few areas which we need to consider (some of these are distinctly identifiable from the tests).
 
 - Planning - we need to identify which ctor, properties and methods to use.
-- Factory method - a deleage which is called with the current scope will create an entire object tree
+- Factory method - a delegate which is called with the current scope will create an entire object tree
 - Lifetime Styles - a way to control when objects are created and if they are disposed of.
-- Scopes - essentially the mechanism to determin when to dispose of objects and resolve/create them. note the container is a scope as well.
+- Scopes - essentially the mechanism to determine when to dispose of objects and resolve/create them. note the container is a scope as well.
 
 
 # Thoughts on the implementation
@@ -63,15 +63,15 @@ ok we have a few areas which we need to consider (some of these are distinctly i
 
 We could have argued that just resolving the single object would have been a better starting place, thats fine, i just wanted to implement a bit more and was not much effort (and allowed me to get more of the internal structure ironed out).
 
+By completing the implementation for the Service with 1 dependency, I actually passed 4 tests! 
+
 ![](https://raw.githubusercontent.com/dbones/dbones.github.io/master/images/posts/2019/bonsai/4%20passing%20tests.PNG)
 
-By completing the implementation for the Service with 1 dependency, I actually passed 4 tests! 
+with these 4 tests we have 71% coverage. hmm what does that mean? well its not 100 as we have code which was implemented to make the project compile and this is not being covered, and i implemented some code to support other tests.
 
 ![](https://raw.githubusercontent.com/dbones/dbones.github.io/master/images/posts/2019/bonsai/4%20tests%2071%25%20covereed.PNG)
 
-with these 4 tests we have 71% coverage. hmm what does that mean? well its not 100 as we have code which was implemented to make the project compile and this is not being covered, and i imeplemented some code to support other tests.
-
-the main point though is the **correctness** (we have 4 passes now)
+The main point though is the **correctness** (we have 4 passes now)
 
 ## Spiking planning for Generics
 
@@ -90,14 +90,14 @@ public class Repository<T> : IRepository<T> { .... }
 
 public class Service  
 {
-    //now from this constrcutor, we know that we need a Repository<User>
+    //now from this constructor, we know that we need a Repository<User>
     public Service(IRepository<User> userRepo) {.....}
 }
 ```
 
 so by scanning the Service class's ctor, we now know of the generic args.
 
-This was based off an small observation that most apps use frameworks, which the entry point for the IoC will be a concrete class, exmaples:
+This was based off an small observation that most apps use frameworks, which the entry point for the IoC will be a concrete class, examples:
 
 - Controllers (web api)
 - Consumers (Masstransit, NServiceBus)
@@ -111,13 +111,13 @@ thus we should know of any / all generic parameters by walking through the depen
 
 The implementation is not the cleanest. some of the decisions are to get a starter for 10, get the green and refactor a little later.
 
-For exmaple, we are using reflection to create the classes, it easier to code and understand, but we will need to replace this with Expresssions or IL code.
+For example, we are using reflection to create the classes, it easier to code and understand, but we will need to replace this with Expressions or IL code.
 
 ```
 object ParameterLessCtor(IAdvancedScope scope) => method.Invoke(createParams.Select(x => x(scope)).ToArray());
 ```
 
-Lifestyles do not contain instance caches, however provide a stratgy to when and where an object is created, cached and tracked for disposal.
+Lifestyles do not contain instance caches, however provide a strategy to when and where an object is created, cached and tracked for disposal.
 
 ```
     public class PerScope : ILifeSpan
@@ -144,13 +144,13 @@ Lifestyles do not contain instance caches, however provide a stratgy to when and
 ```
 
 
-this lead to the scopes having to deal with their cache being modified from multiple threads. To enable this we used the Microsofts ```ReaderWriterLockSlim```, which should provide a performance access to the instances which are cached at that scope level. 
+this lead to the scopes having to deal with their cache being modified from multiple threads. To enable this we used the Microsoft's ```ReaderWriterLockSlim```, which should provide a performance access to the instances which are cached at that scope level. 
 
 # pulling this together
 
-we have an inital start of the project, there is a lot of work to do inorder to statify the requirements
+we have an initial start of the project, there is a lot of work to do indorser to stratify the requirements
 
-we have some code which hightlights that we need to add some new tests (to represent a new requirement)
+we have some code which highlights that we need to add some new tests (to represent a new requirement)
 
 personally i like how the scope works, but im eager to see its performance, and get more support in for generics and named instances.
 
