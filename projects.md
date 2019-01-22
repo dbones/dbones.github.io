@@ -19,7 +19,7 @@ Please feel free to help out.
 
 <p>Bonsai => Small Fast IoC container for .NET<p>
 
-<p>provides some of the epic features such as: Fluent Registrations, Multple Lifestyles, named instances and more.</p>
+<p>provides some of the epic features such as: Fluent Registrations, Multiple Lifestyles (Singleton, PerScope, Transient etc), named instances and more.</p>
 <div>
 
 <br />
@@ -30,7 +30,7 @@ Please feel free to help out.
 
 <p>mpr => Object mapper for Typescript and JavaScript.</p>
 
-<p>Removes the mundane copying values from source to destination, with support for automapping.</p>
+<p>Removes the mundane copying values from source to destination, with support for auto-mapping, complex objects, deep copy, collections.</p>
 
 <div>
 
@@ -40,7 +40,20 @@ Please feel free to help out.
 <a href="https://bitbucket.org/dboneslabs/arm-chair/">
 <img src="https://bytebucket.org/ravatar/%7Ba6c7471f-2808-4f5d-8763-f8a158fde6dc%7D?ts=522619" alt="drawing" height="120" style="float:left;" /></a>
 
-<p>ArmChair => unit of work + couchdb.</p>
+<p>ArmChair => unit of work + CouchDB.</p>
 
-<p>supports the Unit of work pattern we all know and love from NHibernate/EntityFramework and brings it to CouchDb. With support for Linq querying</p>
+<p>Supports the Unit of work pattern we all know and love from NHibernate/EntityFramework and brings it to CouchDb. With support for Linq querying</p>
 <div>
+
+
+<br />
+
+<div style="clear: left">
+<a href="https://github.com/boxes-project/Core/">
+<img src="https://avatars3.githubusercontent.com/u/4000154?s=110&v=4" alt="drawing"  style="float:left;" /></a>
+
+<p>Boxes => Modular dll loader.</p>
+
+<p>Take control of the dll's which are loaded into your app domain, this enables modules to have their own copy/version of a dll. for use with .NET full</p>
+<div>
+
