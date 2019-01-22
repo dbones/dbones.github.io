@@ -50,7 +50,7 @@ Please feel free to help out.
 
 <div style="clear: left">
 <a href="https://github.com/boxes-project/Core/">
-<img src="https://avatars3.githubusercontent.com/u/4000154?s=110&v=4" alt="drawing"  style="float:left;" /></a>
+<img src="https://avatars3.githubusercontent.com/u/4000154?s=110&v=4" alt="drawing"  style="float:left;margin:10px" /></a>
 
 <p>Boxes => Modular dll loader.</p>
 
