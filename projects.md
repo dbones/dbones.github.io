@@ -7,7 +7,7 @@ date: 2014-07-22
 tags: [projects, open-source]
 ---
 
-The following are some of the projects I have created and maded open source.
+The following are some of the projects I have created and made open source.
 
 Please feel free to help out.
 
