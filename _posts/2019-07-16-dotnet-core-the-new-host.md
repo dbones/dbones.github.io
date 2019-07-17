@@ -14,7 +14,7 @@ However, to me, it has a large impact....
 
 ## TLDR;
 
-- the new host provides better for ports and adapters.
+- the new host provides better support for ports and adapters.
 - this is an answer for my question:  [WebHost as a IHostedService](https://github.com/aspnet/Hosting/issues/1369)
 - more info on upgrading: [Migrate from ASP.NET Core 2.2 to 3.0](https://docs.microsoft.com/en-us/aspnet/core/migration/22-to-30?view=aspnetcore-2.2&tabs=visual-studio
 
