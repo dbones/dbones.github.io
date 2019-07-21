@@ -44,7 +44,7 @@ however given new changes in the landscape the platform owners want to address 4
 - Upgrading the backend database technology
 - possible change of API Gateway technology
 
-this platform has some key constraints mainly it has very limited resources (team size and money). This drives the platform to adopt opensource and SaaS components which support small projects.
+this platform has some key constraints mainly it has very limited resources (team size and money). This drives the platform to adopt open-source and SaaS components which support small projects.
 
 # technology radar
 
@@ -120,6 +120,7 @@ This radar shows a large story of a number of technologies being obsoleted and r
 3. the new technology is **adopted** into the platform
 4. if the new technology replaces some existing technology, we can then put this on **hold**
 
+In this case-study, the next radar will show a number of technologies being put on **hold** and other being **adopted**.
 
 # Conclusion
 
