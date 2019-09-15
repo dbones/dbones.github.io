@@ -11,7 +11,8 @@ The following are some of the presentations and demo's I have given:
 
 ### K8s Containers - thought the looking glass - 2019
 
-- [Slides](https://docs.google.com/presentation/d/1E1h3Y_TOskIPLG_4GCP9NaOOGAFalUoILcSRDJ8gCeo/edit?usp=sharing) 
+- [Slides](https://docs.google.com/presentation/d/1E1h3Y_TOskIPLG_4GCP9NaOOGAFalUoILcSRDJ8gCeo/edit?usp=sharing)
+- [Code](https://github.com/dbones-simple-shop)
 
 As we progress to smaller services, away from the monolith, there is one ility that becomes harder.... Observibility.
 
@@ -33,5 +34,6 @@ A short slide deck which looks at some of the main components which are required
 ### Docker (a simple exmaple) - 2016
 
 - [Video](https://www.youtube.com/watch?v=y6sUySkyAos)
+- [Code](https://github.com/dbonesdemo)
 
 using a container orchastrastor to deploy containers.
