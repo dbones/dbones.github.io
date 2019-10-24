@@ -37,6 +37,18 @@ Please feel free to help out.
 <br />
 
 <div style="clear: left">
+<a href="https://github.com/dbones/ink">
+<img src="https://raw.githubusercontent.com/dbones/ink/master/images/bitmap.png" alt="drawing" style="height:120px;float:left;margin:10px" /></a>
+
+<p>Ink => OpenApi Docs for Micro-services<p>
+
+<p>Api Gateway Agnostic solution to share a catalog of Swagger/OpenApi docs with Consumers.</p>
+<div>
+
+<br />
+
+
+<div style="clear: left">
 <a href="https://bitbucket.org/dboneslabs/arm-chair/">
 <img src="https://bytebucket.org/ravatar/%7Ba6c7471f-2808-4f5d-8763-f8a158fde6dc%7D?ts=522619" alt="drawing" height="120" style="float:left;" /></a>
 
