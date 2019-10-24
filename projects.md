@@ -38,7 +38,7 @@ Please feel free to help out.
 
 <div style="clear: left">
 <a href="https://github.com/dbones/ink">
-<img src="https://raw.githubusercontent.com/dbones/ink/master/images/bitmap.png" alt="drawing" style="height:120px;float:left;margin:10px" /></a>
+<img src="https://raw.githubusercontent.com/dbones/ink/master/images/bitmap.png" alt="drawing" style="height:120px;float:left;margin:15px" /></a>
 
 <p>Ink => OpenApi Docs for Micro-services<p>
 
