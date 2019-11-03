@@ -114,21 +114,6 @@ In this case, im running a single node setup
 
 ![](https://raw.githubusercontent.com/dbones/dbones.github.io/master/images/posts/2019/fluentd/1-node-es-setup.png)
 
-notes:
-
-we have the following data (as columns)
-
-- timestamp when the log was created (easy)
-- Service name, we did this via the `.Enrich.WithProperty("Service", serviceName)` line in our code
-- Level, its not logging without the level :)
-- message, details of the log, this is what our FluentD filter ensured we extracted
-- Team, this was from a K8s Label, allowing a team to filter for their services only
-- Node and pod name, FluentD added this, and allows us to see if its a certian pod or host mis-behaving
-
-
-
-the above are a great start for multiple teams running micro-services to see some details (if we combine this with good metics and tracing then we are onto a winner)
-
 
 # In Kibana
 
@@ -145,6 +130,21 @@ we can add some K8s labels and now provide a really helpful columns to filter on
 
 ![](https://raw.githubusercontent.com/dbones/dbones.github.io/master/images/posts/2019/fluentd/logs.png)
 
+
+notes:
+
+we have the following data (as columns)
+
+- timestamp when the log was created (easy)
+- Service name, we did this via the `.Enrich.WithProperty("Service", serviceName)` line in our code
+- Level, its not logging without the level :)
+- message, details of the log, this is what our FluentD filter ensured we extracted
+- Team, this was from a K8s Label, allowing a team to filter for their services only
+- Node and pod name, FluentD added this, and allows us to see if its a certian pod or host mis-behaving
+
+
+
+the above are a great start for multiple teams running micro-services to see some details (if we combine this with good metics and tracing then we are onto a winner)
 
 # Conclusion
 
