@@ -30,7 +30,7 @@ When processing messages, over time our services will fail for some reason such 
 2. The payload is incorrect and it requires for some sort of manual intervention.
 3. The service code is incorrect and an engineer needs to deploy a code fix.
 
-These are some of the reason's which pop to mind will writing this post at 4am.
+These are some of the reason's which pop to mind when writing this post at 4am.
 
 Rabbit has support [deadletter queues](https://www.enterpriseintegrationpatterns.com/patterns/messaging/DeadLetterChannel.html) out of the box, which solves 2 and 3 listed above.
 
@@ -42,7 +42,7 @@ To address this the community have posted a number of solutions, which have some
 - [RabbitMQ - Exponential backoff](https://felipeelias.github.io/rabbitmq/2016/02/22/rabbitmq-exponential-backoff.html) - ensure you read the comment left on the post
 - [RabbitMQ - retries on nodejs](https://blog.forma-pro.com/rabbitmq-retries-on-node-js-1f82c6afc1a1)
 
-This post will look at a possible solution, building on the above articles, we look into a possible solution.
+This post will look at a possible solution, building on the above articles.
 
 (If you are in .NET you can use solutions like Mass-transit or NServiceBus which have solutions for this).
 
@@ -70,7 +70,7 @@ wow, thats is a lot, lets break it down.
 
 ## Topic Queues
 
-Each topic queue will be bound to the message topic that it is for as normal, additionally we
+Each topic queue will be bound to the message topic exchange, as normal, additionally we
 
 - bind it to the reply, using direct routing key
 - add the **x-dead-letter-routing-key** to the same name as the key (it is this which ensure that the message will be routed back to the same topic-queue).
