@@ -16,6 +16,7 @@ we will look at the settings, and how to confirm the setup.
 
 ## TLDR;
 
+- To use `credentialName` to apply TLS on the Istio Ingress, you will need to enable SDS.
 - Set this custom answer: `gateways.istio-ingressgateway.sds.enabled=true`
 
 ## Background
@@ -57,6 +58,9 @@ The `istio-ingressgateway` component is deployed with 1 container (`istio-proxy`
 We need to provide another answer to the HELM chart
 
 `gateways.istio-ingressgateway.sds.enabled=true`
+
+![](https://raw.githubusercontent.com/dbones/dbones.github.io/master/images/posts/2020/istio-sds/options.PNG)
+
 
 This will now setup the 'istio-ingressgateway' with 2 containers
 
