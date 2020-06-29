@@ -21,7 +21,7 @@ we will look at the settings, and how to confirm the setup.
 
 ## Background
 
-When you enable Istio in rancger 2.4.x (2.4.5 in this example), it will show port 31390 will expose HTTPS.
+When you enable Istio in Rancher 2.4.x (2.4.5 in this example), it will show port 31390 will expose HTTPS.
 
 In this [demo setup](https://istio.io/latest/docs/tasks/traffic-management/ingress/secure-ingress/), we setup a Kubernetes TLS secret and reference it in the `Gateway` deployment using the `credentialName`
 
@@ -45,7 +45,7 @@ spec:
     - httpbin.example.com
 ```
 
-Once this is deployed and you try to call this endpoint, it will close the connection and you will not be able to access the port using 'nc -z-v 123.43.234.55 31390'
+Once this is deployed and you try to call this endpoint, it will close the connection and you will not be able to access the port using `nc -z-v server-ip 31390`
 
 This is due to a missing component called the Secrects Discovery Service (SDS). Which is not deployed by default for Ranchers Istio v1.4
 
