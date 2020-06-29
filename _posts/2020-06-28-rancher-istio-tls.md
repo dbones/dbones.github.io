@@ -63,18 +63,19 @@ This will now setup the 'istio-ingressgateway' with 2 containers
 - `istio-proxy` - which we already had
 - `ingress-sds` - the **Secrets Discovery Service** is now deployed and listening for new certs.
 
+![](https://raw.githubusercontent.com/dbones/dbones.github.io/master/images/posts/2020/istio-sds/ingres-sds.PNG)
 
 # confirming its working
 
 Just run the [Istio example code](https://istio.io/latest/docs/tasks/traffic-management/ingress/secure-ingress/), and you should see this something like this:
 
-
-
+![](https://raw.githubusercontent.com/dbones/dbones.github.io/master/images/posts/2020/istio-sds/teapot.PNG)
 
 # Debugging
 
 When we deploy the secret into the `istio-system`, we should be able to look at the `ingress-sds` container logs and see it pick up the TLS secret
 
+![](https://raw.githubusercontent.com/dbones/dbones.github.io/master/images/posts/2020/istio-sds/logs-to-show-the-cert-being-applied.PNG)
 
 # related links
 
