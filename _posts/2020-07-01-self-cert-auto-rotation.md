@@ -33,7 +33,7 @@ lets setup via the Jetstack Helm, with rancher (btw the docs are really good: ht
 
 In the `System` Rancher Project, add the `jetstack` helm3 charts (`https://charts.jetstack.io`), It should look like this:
 
-
+![](https://raw.githubusercontent.com/dbones/dbones.github.io/master/images/posts/2020/istio-self-cert/rancher-jetstack-helm.PNG)
 
 Now you can launch it, in the catalog entries, search for `cert`
 
@@ -43,6 +43,8 @@ we are going to
 - add the answer `installCRDs=true`, this sets up all the CRD's in one step
 
 ok thats done.
+
+![](https://raw.githubusercontent.com/dbones/dbones.github.io/master/images/posts/2020/istio-self-cert/cert-manger-installed.PNG)
 
 # Self Cert Issuer
 
@@ -96,8 +98,10 @@ note in the above
 - `secretName: awesome-io` - we will use this to reference it in the Gateway
 - `rotationPolicy: Always` - this will rotate the private key
 
-
 we should have and Awesome.io Certificate now :D
+
+![](https://raw.githubusercontent.com/dbones/dbones.github.io/master/images/posts/2020/istio-self-cert/awesome-cert.PNG)
+
 
 # Applying TLS Termination in the Gateway
 
@@ -149,4 +153,6 @@ Where:
 
 note the `--insecure`, this is becuase our cert is Self Signed.
 
+the output should look like this (showing all the handshake)
 
+![](https://raw.githubusercontent.com/dbones/dbones.github.io/master/images/posts/2020/istio-self-cert/output.PNG)
