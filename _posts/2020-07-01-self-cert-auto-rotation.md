@@ -16,7 +16,7 @@ We will do this the Clicky-buntie way in Rancher.
 
 ## High-Level steps
 
-- Enable SDS => please see my post
+- Enable SDS => please see (http://dbones.github.io/2020/06/rancher-istio-tls/)
 - setup Cert-Manager
 - create the self-cert issuer
 - create Cert from the issuer
