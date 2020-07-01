@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: enbaling Isio Secure Ingress on Rancher
+title: enabling Isio Secure Ingress on Rancher
 description: simple extra config answer which is required
 date: 2020-06-28
 tags: [k8s, rancher, istio]
